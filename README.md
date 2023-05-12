@@ -10,4 +10,8 @@
 ## Alcance 
 
 ## Integrantes 
+Jaider Aponte
+Santiago Millan
+Santiago Godoy
+Valentina Sanchez
 
