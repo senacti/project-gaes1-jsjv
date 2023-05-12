@@ -1,13 +1,13 @@
 # Repositorio proyecto 
-##Objetivo general 
+## Objetivo general 
 
-##Objetivos específicos
+## Objetivos específicos
 
-##Plantamiento del Problema 
+## Plantamiento del Problema 
 
-##Justificación 
+## Justificación 
 
-##Alcance 
+## Alcance 
 
-##Integrantes 
+## Integrantes 
 
