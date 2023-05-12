@@ -1,2 +1,8 @@
-# project-gaes1-jsjv
-project-gaes1-jsjv created by GitHub Classroom
+# Repositorio proyecto 
+##Objetivo general 
+##Objetivos específicos
+##Plantamiento del Problema 
+##Justificación 
+##Alcance 
+##Integrantes 
+
