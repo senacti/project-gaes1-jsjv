@@ -15,8 +15,18 @@ Ausencia de inventario en el sistema Droop Soft.
 Mala organización de los horarios laborales. 
 
 ## Justificación 📋
+El sistema de información JSJV optimiza y automatiza las funciones manuales observadas en la compañía especializada en el área de lavado de prendas y muebles.
+No solo actualizará las funciones de servicios, también implementará funciones en la  gestión humana, actividades e inventario. 
 
 ## Alcance 🎯
+Cada rol contará con procesos limitados por un usuario en específico.
+El sistema agiliza los diferentes tipos de trabajo de cada usuario, reduciendo en tiempo real las tareas repetitivas y permitiendo el aumento de la comunicación entre todas las áreas que integran la empresa.
+-El sistema está pensado para una sola actividad comercial.
+-El sistema contará con una estructura liviana y fácil de procesar para el hardware de la empresa.
+-El sistema ofrecerá la facilidad de solicitar un servicio para el cliente , sin las opciones de hacerle seguimiento a este.
+-El sistema no puede influir en las actividades de los trabajadores pero estas están ligadas al sistema.  
+-El sistema obligatoriamente tiene que tener una red internet para poder funcionar.
+-El sistema de entregas no tendrá rastreo de prendas
 
 ## Integrantes 🧠
 * Jaider Aponte <br>
