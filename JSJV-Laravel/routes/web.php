@@ -52,4 +52,27 @@ Route::get('/Error404', function () {
 Route::get('/Error505', function () {
     return view("Error505");
 });
-
+Route::get('/Dashboard', function () {
+    return view("Dasboard");
+});
+Route::get('/Dashboard_Ot', function () {
+    return view("DashBoard_Ot");
+});
+Route::get('/Dashboard_Inv', function () {
+    return view("Dashboard_Inv");
+});;
+Route::get('/Dashboard_GE', function () {
+    return view("Dashboard_GE");
+});
+Route::get('/Dashboard_GA', function () {
+    return view("Dashboard_GA");
+});
+Route::get('/con_olvidada', function () {
+    return view("con_olvidada");
+});
+Route::get('/Catalogo_Servicios_CR', function () {
+    return view("Catalogo_Servicios_CR");
+});
+Route::get('/Catalogo_Servicios_SR', function () {
+    return view("Catalogo_Sevicios_SR");
+});

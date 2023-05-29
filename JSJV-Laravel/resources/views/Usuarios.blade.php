@@ -25,7 +25,7 @@
 
      <div class="signupFrm">
 
-      <a href="Index.html" class="imgregistro">
+      <a href=" {{ url ('/Index') }}" class="imgregistro">
         <img src="{{ asset('img/LOGO MORADO LAVAMATIC.png') }}" alt="">
       </a>
       
@@ -55,9 +55,9 @@
 
           
           <!--input type="submit" class="submitBtn" value="Continuar"-->
-          <a href="Catalogo Servicios_CR.html"target="_blank" input type="submit" class="submitBtn" value="Continuar" > Cliente </a>
+          <a href=" {{ url ('/Catalogo_Servicios_CR') }}"target="_blank" input type="submit" class="submitBtn" value="Continuar" > Cliente </a>
 
-          <a href="Dashboard.html"target="_blank" input type="submit" class="submitBtn" value="Continuar" > Administrador </a>
+          <a href=" {{ url ('Dashboard') }}"target="_blank" input type="submit" class="submitBtn" value="Continuar" > Administrador </a>
 
           <!--a href="dashboar.html"target="_blank" input type="submit" class="submitBtn" value="Continuar" > Empleado </a-->
 
