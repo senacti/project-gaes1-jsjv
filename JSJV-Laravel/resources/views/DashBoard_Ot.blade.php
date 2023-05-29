@@ -8,12 +8,12 @@
     <!-- BOX ICONS -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <!--  CSS -->
-    <link rel="stylesheet" href="./css/estilos.css">
-    <link rel="stylesheet" href="css/Estilos_Form.css">
-    <link rel="stylesheet" href="css/Estilo.Tabla.css">
+    <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/Estilos_Form.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/Estilo.Tabla.css') }}">
 
     <!--  JS -->
-    <script src="./js/app.js" defer></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
     
 </head>
 <body>
@@ -21,7 +21,7 @@
     <header class="menu">
         <div class="cuadrolog">
 
-            <a href="Dashboard.html"><img class="logo" src="img/Lavamatic La Italiana logo.jpeg" alt="logo"></a>
+            <a href="Dashboard.html"><img class="logo" src="{{ asset('img/Lavamatic La Italiana logo.jpeg') }}" alt="logo"></a>
             </div>
            
             <nav>
@@ -33,7 +33,7 @@
            </div>
            <div class="menuadmin">
             <button>Santiago Godoy</button>
-            <img class="fotoad" src="img/Administrador.jpg" alt="fotoad">
+            <img class="fotoad" src="{{ asset('img/Administrador.jpg') }}" alt="fotoad">
             <div class="menuadminl">
             <a href="#">Informacion de empleados</a>
             <a href="#">Informacion personal</a>

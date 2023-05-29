@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/error_500.css">
+    <link rel="stylesheet" href="{{ asset('css/error_500.css') }}">
     <title>error 500</title>
 </head>
 <body>
@@ -41,5 +41,5 @@
     &nbsp;&nbsp;Completed 1 feature in 0.01s<br>
       <br>
     </div>
-<script src="js/error_500.js"></script>
+<script src="{{ asset('js/error_500.js') }}"></script>
 </html>

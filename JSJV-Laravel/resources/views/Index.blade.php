@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="{{ asset('css/estilo.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
 <body>
     <header>
      <a href= "Index.html" class="logo">
-        <img src="img/LOGO MORADO LAVAMATIC.png" alt="">
+        <img src="{{ asset('img/LOGO MORADO LAVAMATIC.png') }}" alt="">
  
      </a>
      <nav>
@@ -39,15 +39,15 @@
            
          
     
-         <button> Mas informacion <img src="icon/bxs-right-arrow-alt.svg" alt=""> </button>
+         <button> Mas informacion <img src="{{ asset('icon/bxs-right-arrow-alt.svg') }}" alt=""> </button>
                        
      </div>
 
      <div class="imagenes">  
         
-        <img class="años" src="img/20-negro-png.webp" alt="">
-        <img class="foto" src="img/prendas.png" alt="">
-        <img class="fondo" src="img/geo.png" alt="">
+        <img class="años" src="{{ asset('img/20-negro-png.webp') }}" alt="">
+        <img class="foto" src="{{ asset('img/prendas.pn') }}" alt="">
+        <img class="fondo" src="{{ asset('img/geo.png') }}" alt="">
 
      </div>
 

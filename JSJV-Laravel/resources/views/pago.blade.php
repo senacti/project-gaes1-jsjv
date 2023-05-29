@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pago</title>
 
-    <link rel="stylesheet" href="css/Estilo.Pago.css">
+    <link rel="stylesheet" href="{{ asset('css/Estilo.Pago.css') }}">
 
 
 
@@ -127,9 +127,9 @@
 
             <p>Metodo de Pago</p>
             
-            <img class="img1" src="icon/mastercard.png" alt="Mastercart">
-            <img class="img2"src="icon/visa.png" alt="Visa">
-            <img class="img3"src="icon/money.png" alt="Moneda">
+            <img class="img1" src="{{ asset('icon/mastercard.png') }}" alt="Mastercart">
+            <img class="img2"src="{{ asset('icon/visa.png') }}" alt="Visa">
+            <img class="img3"src="{{ asset('icon/money.png') }}" alt="Moneda">
 
             <div class="cuadro3">
                 <br>
@@ -159,6 +159,6 @@
     </div>
 
 </body>
-<script src="js/pago.js"></script>
+<script src="{{ asset('js/pago.js') }}"></script>
 
 </html>

@@ -13,6 +13,43 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return 'Bienvenido a Larvel Lavamatic';
+Route::get('/Usuarios', function () {
+    return view("Usuarios");
 });
+
+Route::get('/Registro', function () {
+    return view("Registro");
+});
+
+Route::get('/Quienes', function () {
+    return view("Quienes");
+});
+
+Route::get('/Pago', function () {
+    return view("pago");
+});
+
+Route::get('/Index', function () {
+    return view("Index");
+});
+
+Route::get('/Form Restablecer Contraseña', function () {
+    return view("form_restablecer_contraseña");
+});
+
+Route::get('/Form Registrarse', function () {
+    return view("form_registrarse");
+});
+
+Route::get('/Form Registro Empleado', function () {
+    return view("Form_Reg_Emp");
+});
+
+Route::get('/Error404', function () {
+    return view("Error404");
+});
+
+Route::get('/Error505', function () {
+    return view("Error505");
+});
+

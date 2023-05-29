@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="{{ asset('css/estilo.css') }}">
     <title>Inicio Sesion</title>
 </head>
 <body>
@@ -26,7 +26,7 @@
    <div class="signupFrm">
 
     <a href="Index.html" class="imgregistro">
-      <img src="img/LOGO MORADO LAVAMATIC.png" alt="">
+      <img src="{{ asset('img/LOGO MORADO LAVAMATIC.png') }}" alt="">
     </a>
     
 
@@ -67,5 +67,5 @@
     
     
     </body>
-    <script src="js/resgistro.js"></script>
+    <script src="{{ asset('js/resgistro.js') }}"></script>
     </html>

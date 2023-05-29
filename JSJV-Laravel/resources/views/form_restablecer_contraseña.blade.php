@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="{{ asset('css/estilo.css') }}">
     <title>Restablecer contraseña</title>
 
 </head>
@@ -22,7 +22,7 @@
      <div class="signupFrm">
 
       <a href="Registro.html" class="imgregistro">
-        <img src="img/LOGO MORADO LAVAMATIC.png" alt="">
+        <img src="{{ asset('img/LOGO MORADO LAVAMATIC.png') }}" alt="">
       </a>
       
 
@@ -48,5 +48,5 @@
         </form>
       </div>
 </body>
-<script src="js/Restablecer_Contra.js"></script>
+<script src="{{ asset('js/Restablecer_Contra.js') }}"></script>
 </html>

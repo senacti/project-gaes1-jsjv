@@ -4,8 +4,8 @@
         <title></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
-        <link rel="stylesheet" href="css/Estilos_Form.css">
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('css/Estilos_Form.css') }}">
     </head>
     <body>
         <hr>

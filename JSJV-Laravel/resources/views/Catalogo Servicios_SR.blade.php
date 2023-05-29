@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cliente No Registrado</title>
 
-    <script src="iccon/buscar.png"></script>
+    <script src="{{ asset('iccon/buscar.png') }}"></script>
 
-    <link rel="stylesheet" href="css/Estilo_CatalogoServicios.css">
-    <link rel="stylesheet" href="css/css Boostrap/bootstrap-grid.min.css.map">
+    <link rel="stylesheet" href="{{ asset('css/Estilo_CatalogoServicios.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/css Boostrap/bootstrap-grid.min.css.map') }}">
 
 </head>
 <body>
@@ -18,13 +18,13 @@
   <header class="menu">
 
       <div class="cuadrolog">
-      <a href="Index.html"><img class="logo" src="img/Lavamatic La Italiana logo.jpeg" alt="logo"></a>
+      <a href="Index.html"><img class="logo" src="{{ asset('img/Lavamatic La Italiana logo.jpeg') }}" alt="logo"></a>
       </div>
 
       <div class="buscar">
           <input type="text" placeholder="Buscar" required>
           <div class="btn">
-             <img class="iccon" src="icon/buscar.png" alt="">
+             <img class="iccon" src="{{ asset('icon/buscar.png') }}" alt="">
           </div>
       </div>
 
@@ -42,7 +42,7 @@
 
       <!--Administrador-->
       <div class="admin">
-      <img class="UsIcon" src="img/user.svg" alt="UsuarioIcono">
+      <img class="UsIcon" src="{{ asset('img/user.svg') }}" alt="UsuarioIcono">
 
       
       <h2><a href="Registro.html" class="Admin">Iniciar sesion</h2></a>
@@ -64,42 +64,42 @@
     <div class="servicio1">
       
       <a href="Registro.html">Muebles</a>
-      <img src="img/Muebles.jpg" alt="Muebles">
+      <img src="{{ asset('img/Muebles.jpg') }}" alt="Muebles">
       
     </div>
 
     <div class="servicio2">
 
       <a href="Registro.html">Lavanderia</a>
-      <img src="img/Lavadoras.jpg" alt="Lavanderia">
+      <img src="{{ asset('img/Lavadoras.jpg') }}" alt="Lavanderia">
 
     </div>
 
     <div class="servicio3">
 
       <a href="Registro.html">Planchado</a>
-      <img src="img/Planchado.jpg" alt="Secado">
+      <img src="{{ asset('img/Planchado.jpg') }}" alt="Secado">
 
     </div>
 
     <div class="servicio4">
 
       <a href="Registro.html">Tintoreria</a>
-      <img src="img/Tintoreria.jpg" alt="Tintoreria">
+      <img src="{{ asset('img/Tintoreria.jpg') }}" alt="Tintoreria">
 
     </div>
 
     <div class="servicio5">
 
       <a href="Registro.html">Zapatos</a>
-      <img src="img/Zapatos.jpg" alt="Calzado">
+      <img src="{{ asset('img/Zapatos.jpg') }}" alt="Calzado">
 
     </div>
 
     <div class="servicio6">
 
       <a href="Registro.html">Tapetes</a>
-      <img src="img/Tapete.jpg" alt="Tapetes">
+      <img src="{{ asset('img/Tapete.jpg') }}" alt="Tapetes">
 
     </div>
 

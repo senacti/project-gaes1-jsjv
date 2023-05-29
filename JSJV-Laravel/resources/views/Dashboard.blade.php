@@ -8,9 +8,9 @@
     <!-- BOX ICONS -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <!--  CSS -->
-    <link rel="stylesheet" href="./css/estilos.css">
-    <link rel="stylesheet" href="css/Estilos_Form.css">
-    <link rel="stylesheet" href="css/estilo_graficas.css">
+    <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/Estilos_Form.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/estilo_graficas.css') }}">
 
     <!--  JS -->
     <script src="./js/app.js" defer></script>
@@ -20,7 +20,7 @@
 
     <header class="menu">
         <div class="cuadrolog">
-            <a href="Dashboard.html"><img class="logo" src="img/Lavamatic La Italiana logo.jpeg" alt="logo"></a>
+            <a href="Dashboard.html"><img class="logo" src="{{ asset('img/Lavamatic La Italiana logo.jpeg') }}" alt="logo"></a>
             </div>
            
             <nav>
@@ -32,7 +32,7 @@
            </div>
            <div class="menuadmin">
             <button>Santiago Godoy</button>
-            <img class="fotoad" src="img/Administrador.jpg" alt="fotoad">
+            <img class="fotoad" src="{{ asset('img/Administrador.jpg') }}" alt="fotoad">
             <div class="menuadminl">
             <a href="#">Informacion de empleados</a>
             <a href="#">Informacion personal</a>
@@ -122,7 +122,7 @@
             <p >50.000</p>
             </div>
             <a href="#"> Consultar</a>
-            <img src="img/Camas.jpg" alt="">
+            <img src="{{ asset('img/Camas.jpg') }}" alt="">
         </div>
 
         <div class="Pedidos2">
@@ -131,7 +131,7 @@
             <p >50.000</p>
             </div>
             <a href="#"> Consultar</a>
-            <img src="img/Muebles.jpg" alt="">
+            <img src="{{ asset('img/Muebles.jpg') }}" alt="">
         </div>
 
         <div class="Pedidos3">
@@ -140,7 +140,7 @@
             <p >50.000</p>
             </div>
             <a href="#"> Consultar</a>
-            <img src="img/Ropa.jpg" alt="">
+            <img src="{{ asset('img/Ropa.jpg') }}" alt="">
         </div>
 
         <div class="Pedidos4">
@@ -149,7 +149,7 @@
             <p >50.000</p>
             </div>
             <a href="#"> Consultar</a>
-            <img src="img/Planchado.jpg" alt="">
+            <img src="{{ asset('img/Planchado.jpg') }}" alt="">
         </div>   
         
     </div>
@@ -163,12 +163,12 @@
            <div class="fecha">
             <input class="form__input" type="date" >           
            </div>
-        <img src="img/Gastos mes.png" alt="Gastos Grafica">
+        <img src="{{ asset('img/Gastos mes.png') }}" alt="Gastos Grafica">
 
     </div>
     
     <div class="cuadro4">
-        <img src="img/Inventario.jpg" alt="Inventario Grafico">
+        <img src="{{ asset('img/Inventario.jpg') }}" alt="Inventario Grafico">
     </div>
 
 </body>

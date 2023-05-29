@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cliente Registrado</title>
 
-    <script src="iccon/buscar.png"></script>
+    <script src="{{ asset('iccon/buscar.png') }}"></script>
 
-    <link rel="stylesheet" href="css/Estilo_CatalogoServicios.css">
-    <link rel="stylesheet" href="css/css Boostrap/bootstrap-grid.min.css.map">
+    <link rel="stylesheet" href="{{ asset('css/Estilo_CatalogoServicios.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/css Boostrap/bootstrap-grid.min.css.map') }}">
 
 </head>
 <body>
@@ -19,7 +19,7 @@
 
       <div class="cuadrolog">
       
-      <a href="Usuarios.html"><img class="logo" src="img/Lavamatic La Italiana logo.jpeg" alt="logo"></a>
+      <a href="Usuarios.html"><img class="logo" src="{{ asset('img/Lavamatic La Italiana logo.jpeg') }}" alt="logo"></a>
       </div>
 
       <div class="buscar">
@@ -65,42 +65,42 @@
     <div class="servicio1">
       
       <a href="pago.html">Muebles</a>
-      <img src="img/Muebles.jpg" alt="Muebles">
+      <img src="{{ asset('img/Muebles.jpg') }}" alt="Muebles">
       
     </div>
 
     <div class="servicio2">
 
       <a href="pago.html">Lavanderia</a>
-      <img src="img/Lavadoras.jpg" alt="Lavanderia">
+      <img src="{{ asset('img/Lavadoras.jpg') }}" alt="Lavanderia">
 
     </div>
 
     <div class="servicio3">
 
       <a href="pago.html">Planchado</a>
-      <img src="img/Planchado.jpg" alt="Secado">
+      <img src="{{ asset('img/Planchado.jpg') }}" alt="Secado">
 
     </div>
 
     <div class="servicio4">
 
       <a href="pago.html">Tintoreria</a>
-      <img src="img/Tintoreria.jpg" alt="Tintoreria">
+      <img src="{{ asset('img/Tintoreria.jpg') }}" alt="Tintoreria">
 
     </div>
 
     <div class="servicio5">
 
       <a href="pago.html">Zapatos</a>
-      <img src="img/Zapatos.jpg" alt="Calzado">
+      <img src="{{ asset('img/Zapatos.jpg') }}" alt="Calzado">
 
     </div>
 
     <div class="servicio6">
 
       <a href="pago.html">Tapetes</a>
-      <img src="img/Tapete.jpg" alt="Tapetes">
+      <img src="{{ asset('img/Tapete.jpg') }}" alt="Tapetes">
 
     </div>
 
