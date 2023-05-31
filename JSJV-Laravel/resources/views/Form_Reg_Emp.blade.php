@@ -11,7 +11,7 @@
         <hr>
         <div class="cont">
          <h1>Registro del Empleado</h1>
-            <form id="form" class="form" action="dashboar.html"> 
+            <form id="form" class="form" action=" {{ url('/Dashboar')}}"> 
                 <div class="form_control" action="">
                 <fieldset >
                     <legend>Documento Empleado</legend>
@@ -109,6 +109,6 @@
                 <input class="btn2" type="reset" value="Limpiar">
             </form>
         </div>
-        <script src="js/Form.js"></script>
+        <script src=" {{ asset('js/Form.js') }}"></script>
     </body>
 </html>

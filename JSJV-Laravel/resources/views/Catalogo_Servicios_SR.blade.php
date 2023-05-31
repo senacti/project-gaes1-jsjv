@@ -18,7 +18,7 @@
   <header class="menu">
 
       <div class="cuadrolog">
-      <a href="Index.html"><img class="logo" src="{{ asset('img/Lavamatic La Italiana logo.jpeg') }}" alt="logo"></a>
+      <a href=" {{ url ('/Index') }}"><img class="logo" src="{{ asset('img/Lavamatic La Italiana logo.jpeg') }}" alt="logo"></a>
       </div>
 
       <div class="buscar">
@@ -45,7 +45,7 @@
       <img class="UsIcon" src="{{ asset('img/user.svg') }}" alt="UsuarioIcono">
 
       
-      <h2><a href="Registro.html" class="Admin">Iniciar sesion</h2></a>
+      <h2><a href=" {{ url('/Registro') }}" class="Admin">Iniciar sesion</h2></a>
       </div>
       
       <!--Configuraciones-->
@@ -63,42 +63,42 @@
 
     <div class="servicio1">
       
-      <a href="Registro.html">Muebles</a>
+      <a href=" {{ url('/Registro') }}">Muebles</a>
       <img src="{{ asset('img/Muebles.jpg') }}" alt="Muebles">
       
     </div>
 
     <div class="servicio2">
 
-      <a href="Registro.html">Lavanderia</a>
+      <a href=" {{ url('/Registro') }}">Lavanderia</a>
       <img src="{{ asset('img/Lavadoras.jpg') }}" alt="Lavanderia">
 
     </div>
 
     <div class="servicio3">
 
-      <a href="Registro.html">Planchado</a>
+      <a href=" {{ url('/Registro') }}">Planchado</a>
       <img src="{{ asset('img/Planchado.jpg') }}" alt="Secado">
 
     </div>
 
     <div class="servicio4">
 
-      <a href="Registro.html">Tintoreria</a>
+      <a href=" {{ url('/Registro') }}">Tintoreria</a>
       <img src="{{ asset('img/Tintoreria.jpg') }}" alt="Tintoreria">
 
     </div>
 
     <div class="servicio5">
 
-      <a href="Registro.html">Zapatos</a>
+      <a href=" {{ url('/Registro?) }}">Zapatos</a>
       <img src="{{ asset('img/Zapatos.jpg') }}" alt="Calzado">
 
     </div>
 
     <div class="servicio6">
 
-      <a href="Registro.html">Tapetes</a>
+      <a href=" {{ url('/Registro') }}">Tapetes</a>
       <img src="{{ asset('img/Tapete.jpg') }}" alt="Tapetes">
 
     </div>

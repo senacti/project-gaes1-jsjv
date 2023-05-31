@@ -19,7 +19,7 @@
 
       <div class="cuadrolog">
       
-      <a href="Usuarios.html"><img class="logo" src="{{ asset('img/Lavamatic La Italiana logo.jpeg') }}" alt="logo"></a>
+      <a href=" {{ url('/Usuarios') }}"><img class="logo" src="{{ asset('img/Lavamatic La Italiana logo.jpeg') }}" alt="logo"></a>
       </div>
 
       <div class="buscar">
@@ -64,42 +64,42 @@
 
     <div class="servicio1">
       
-      <a href="pago.html">Muebles</a>
+      <a href=" {{ url('/pago') }}">Muebles</a>
       <img src="{{ asset('img/Muebles.jpg') }}" alt="Muebles">
       
     </div>
 
     <div class="servicio2">
 
-      <a href="pago.html">Lavanderia</a>
+      <a href=" {{ url('/pago') }}">Lavanderia</a>
       <img src="{{ asset('img/Lavadoras.jpg') }}" alt="Lavanderia">
 
     </div>
 
     <div class="servicio3">
 
-      <a href="pago.html">Planchado</a>
+      <a href=" {{ url('/pago') }}">Planchado</a>
       <img src="{{ asset('img/Planchado.jpg') }}" alt="Secado">
 
     </div>
 
     <div class="servicio4">
 
-      <a href="pago.html">Tintoreria</a>
+      <a href=" {{ url('/pago') }}">Tintoreria</a>
       <img src="{{ asset('img/Tintoreria.jpg') }}" alt="Tintoreria">
 
     </div>
 
     <div class="servicio5">
 
-      <a href="pago.html">Zapatos</a>
+      <a href=" {{ url ('/pago') }}">Zapatos</a>
       <img src="{{ asset('img/Zapatos.jpg') }}" alt="Calzado">
 
     </div>
 
     <div class="servicio6">
 
-      <a href="pago.html">Tapetes</a>
+      <a href=" {{ url('/pago') }}">Tapetes</a>
       <img src="{{ asset('img/Tapete.jpg') }}" alt="Tapetes">
 
     </div>

@@ -13,14 +13,14 @@
     <link rel="stylesheet" href="{{ asset('css/Estilo.Tabla.css') }}">
 
     <!--  JS -->
-    <script src="./js/app.js" defer></script>
+    <script src=" {{ asset('/js/app.js') }}" defer></script>
     
 </head>
 <body>
 
     <header class="menu">
         <div class="cuadrolog">
-            <a href="Dashboard.html"><img class="logo" src="{{ asset('img/Lavamatic La Italiana logo.jpeg') }}" alt="logo"></a>
+            <a href=" {{ url('/Dashboard') }}"><img class="logo" src="{{ asset('img/Lavamatic La Italiana logo.jpeg') }}" alt="logo"></a>
             </div>
            
             <nav>
@@ -36,7 +36,7 @@
             <div class="menuadminl">
             <a href="#">Informacion de empleados</a>
             <a href="#">Informacion personal</a>
-            <a href="Index.html">Cerrar sesion</a>
+            <a href=" {{ url('/Index') }}">Cerrar sesion</a>
             </div>
           </div>             
     </header>
@@ -59,36 +59,36 @@
         <div class="menu">
             <div class="enlace">
                 <i class="bx bx-grid-alt"></i>
-                <span ><a href="DashBoard_Ot.html">Orden de trabajo</a></span>
+                <span ><a href=" {{ url(/'DashBoard_Ot') }}">Orden de trabajo</a></span>
 
             </div>
 
             <div class="enlace" >
                 <i class="bx bx-user"></a></i>
-                <span ><a href="Dashboard_GE.html">Empleado</a></span>
+                <span ><a href=" {{ url('/Dashboard_GE') }}">Empleado</a></span>
                 
             </div>
 
             <div class="enlace" >
                 <i class="bx bx-grid-alt" ></i>
-                <span ><a href="Dashboard_GA.html">Actividades</a></span>
+                <span ><a href=" {{ url('/Dashboard_GA') }}">Actividades</a></span>
 
             </div>
 
             <div class="enlace">
                 <i class="bx bx-message-square"></i>
-                <span ><a href="Error404.html">Mensajes</a></span>
+                <span ><a href=" {{ url('/Error404') }}">Mensajes</a></span>
             </div>
 
             <div class="enlace">
                 <i class="bx bx-file-blank"></i>
-                <span ><a href="Error500.html">Novedades</a></span>
+                <span ><a href=" {{ url('/Error500) }}">Novedades</a></span>
                 
             </div>
 
             <div class="enlace">
                 <i class="bx bx-cart"></i>
-                <span ><a href="Dashboard_Inv.html">Inventarios</a></span>
+                <span ><a href=" {{ url('/Dashboard_Inv') }}">Inventarios</a></span>
             </div>
 
             <!--div class="enlace">
@@ -98,7 +98,7 @@
 
             <div class="enlace">
                 <i class="bx bx-cog"></i>
-                <span ><a href="Error404.html">Configuracion</a></span>
+                <span ><a href=" {{ url('/Error404') }}">Configuracion</a></span>
             </div>
         </div>
     </div>
@@ -110,7 +110,7 @@
         <h1>Registro del Empleado</h1>
         <div class="cont2">
 
-               <form id="formulario" class="form" action="Dashboard.html"> 
+               <form id="formulario" class="form" action=" {{ url('/Dashboard') }}"> 
                    <div class="form_control" action="">
                    <fieldset >
                        <legend>Documento Empleado</legend>

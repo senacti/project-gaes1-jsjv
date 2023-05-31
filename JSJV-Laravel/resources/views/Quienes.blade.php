@@ -11,7 +11,7 @@
 </head>
 <body>
     
-     <a href= "Index.html" class="logo">
+     <a href= "{{ ('/Index')}}" class="logo">
         <img src="{{ asset('img/LOGO MORADO LAVAMATIC.png') }}" alt="" style="height: 20%" width="20%">
  
      </a>

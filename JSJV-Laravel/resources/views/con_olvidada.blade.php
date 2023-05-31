@@ -14,12 +14,12 @@
 
      <div class="signupFrm">
 
-      <a href="Registro.html" class="imgregistro">
+      <a href=" {{ url('/Registro') }}" class="imgregistro">
         <img src="{{ asset('img/LOGO MORADO LAVAMATIC.png') }}" alt="">
       </a>
       
 
-        <form action="form_restablecer_contraseña.html" class="form" id="formulario">
+        <form action=" {{ url('/form_restablecer_contraseña') }}" class="form" id="formulario">
           <h1 class="title">Correo de Recuperacion</h1>
          
     

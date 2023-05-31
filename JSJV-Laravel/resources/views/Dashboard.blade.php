@@ -13,14 +13,14 @@
     <link rel="stylesheet" href="{{ asset('css/estilo_graficas.css') }}">
 
     <!--  JS -->
-    <script src="./js/app.js" defer></script>
+    <script src="{{ asset('/js/app.js')}}" defer></script>
     
 </head>
 <body>
 
     <header class="menu">
         <div class="cuadrolog">
-            <a href="Dashboard.html"><img class="logo" src="{{ asset('img/Lavamatic La Italiana logo.jpeg') }}" alt="logo"></a>
+            <a href="{{ url('Dashboard') }}"><img class="logo" src="{{ asset('img/Lavamatic La Italiana logo.jpeg') }}" alt="logo"></a>
             </div>
            
             <nav>
@@ -36,7 +36,7 @@
             <div class="menuadminl">
             <a href="#">Informacion de empleados</a>
             <a href="#">Informacion personal</a>
-            <a href="Index.html">Cerrar sesion</a>
+            <a href="{{ url ('/Index') }}">Cerrar sesion</a>
             </div>
           </div>             
     </header>

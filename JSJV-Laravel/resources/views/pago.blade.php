@@ -22,7 +22,7 @@
         
         <h1>Facturación</h1>
 
-        <form action="Catalogo Servicios_CR.html" id="formulario" >
+        <form action=" {{ url ('/Catalogo_Servicios_CR') }} " id="formulario" >
 
             <div class="Nombre">
             <!--Nombres-->
@@ -147,7 +147,7 @@
 
         </div>
         
-        <a href="Catalogo Servicios_CR.html"><button type="submit" form="formulario"  class="btn1">Enviar</button></a>
+        <a href="{{ url('/Catalogo_Servicios_CR') }} "><button type="submit" form="formulario"  class="btn1">Enviar</button></a>
             
         </div>
         <!--<a href="Catalogo Servicios.html">

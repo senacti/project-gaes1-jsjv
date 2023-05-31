@@ -19,14 +19,14 @@
 </head>
 <body>
     <header>
-     <a href= "Index.html" class="logo">
+     <a href= " {{ url('/Index') }}" class="logo">
         <img src="{{ asset('img/LOGO MORADO LAVAMATIC.png') }}" alt="">
  
      </a>
      <nav>
-        <a href="Quienes.html" >¿Quienes somos?</a>
-        <a href="Catalogo Servicios_SR.html" > Servicios </a>
-        <a href="Registro.html" > Iniciar Sesion </a>
+        <a href=" {{ url ('/Quienes') }}" >¿Quienes somos?</a>
+        <a href=" {{ url ('/Catalogo_Servicios_SR') }}" > Servicios </a>
+        <a href=" {{ url ('/Registro') }}" > Iniciar Sesion </a>
      </nav>
 
     </header>

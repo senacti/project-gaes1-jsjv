@@ -20,12 +20,12 @@
 
      <div class="signupFrm">
 
-      <a href="Registro.html" class="imgregistro">
+      <a href=" {{ url('/Registro') }}" class="imgregistro">
         <img src="{{ asset('img/LOGO MORADO LAVAMATIC.png') }}" alt="">
       </a>
       
 
-        <form action="DashBoard.html" class="form" id="formulario">
+        <form action="{{ url('/DashBoard')}}" class="form" id="formulario">
           <h1 class="title">Formulario de Registro</h1>
           <div class="inputContainer">
             <input type="text" class="input" name="nombre" id="nombre" pattern="^[A-Za-z]+$" maxlength="35" placeholder="a" required>
