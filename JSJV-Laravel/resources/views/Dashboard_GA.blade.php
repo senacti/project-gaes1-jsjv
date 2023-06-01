@@ -110,7 +110,7 @@
         <h1>Novedad Actividad</h1>
         <div class="cont">
 
-               <form id="form" class="form" action="Dashboard.html"> 
+               <form id="form" class="form" action="{{url('/Dashboard')}}"> 
                    <div class="form_control" action="">
                    <fieldset >
                        <legend>Activdad de novedad</legend>

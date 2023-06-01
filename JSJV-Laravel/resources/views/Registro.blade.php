@@ -30,7 +30,7 @@
     </a>
     
 
-      <form action="Usuarios.html" id="formulario" class="form">
+      <form action="{{ url ('/Usuarios') }}" id="formulario" class="form">
         <h1 class="title">Inicio de sesion</h1>
   
         <div class="inputContainer">
@@ -53,8 +53,8 @@
           <label for="" class="label">Confirmar Contraseña</label>
         </div-->
 
-        <br><a href="con_olvidada.html">¿No recuerda su contraseña ?</a><br> <br>
-        <a href="form_registrarse.html">Crear Cuenta</a><br>
+        <br><a href="{{url('/con_olvidada')}}">¿No recuerda su contraseña ?</a><br> 
+        <br><a href="{{url('/form_registrarse')}}">Crear Cuenta</a><br>
 
         <!--input type="submit" href="DashBoard.html "class="submitBtn"value="Entrar"-->
         <!--a href="DashBoard.html" class="submitBtn" > Continuar</a-->

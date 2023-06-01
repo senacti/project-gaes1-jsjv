@@ -110,7 +110,7 @@
         <h1>Registro Inventarios </h1>
         <div class="cont">
 
-               <form id="form" class="form" action=" {{ url ('Dashboar') }}"> 
+               <form id="form" class="form" action=" {{ url ('/Dashboar') }}"> 
                    <div class="form_control" action="">
                    <fieldset >
                        <legend>Tipo Inventarios</legend>
@@ -128,7 +128,7 @@
     
                <div class="form_control" action="">
                    <fieldset >
-                       <legend>Datos de Insumo</legend>
+                       <legend>Datos para el almacenamiento</legend>
                        <input class="placeholder" type="text" placeholder=" Color " maxlength="15" required>
                        <input class="placeholder" type="text" placeholder=" Marca " maxlength="15" required>
                        <input class="placeholder" type="text" placeholder=" Tamaño " maxlength="15" required>
@@ -159,7 +159,7 @@
     
                <div class="form_control" action="">
                    <fieldset>
-                       <legend> Detalle insumos </legend>
+                       <legend> Detalles para el almacenamiento </legend>
                        <input class="placeholder" type="text" placeholder=" Nombre Inventario " required>
                        <input class="placeholder" type="text" placeholder="Detalle  " required>
                        <!--input class="placeholder" type="email" placeholder=" Correo electronico" required-->

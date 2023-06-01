@@ -25,7 +25,7 @@
       </a>
       
 
-        <form action="{{ url('/DashBoard')}}" class="form" id="formulario">
+        <form action="{{ url('/Dashboard')}}" class="form" id="formulario">
           <h1 class="title">Formulario de Registro</h1>
           <div class="inputContainer">
             <input type="text" class="input" name="nombre" id="nombre" pattern="^[A-Za-z]+$" maxlength="35" placeholder="a" required>

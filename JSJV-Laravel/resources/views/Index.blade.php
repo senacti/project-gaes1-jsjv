@@ -35,9 +35,6 @@
 
             <h1>BIENVENIDO</h1>
             <p> Somos especialistas en el cuidado de tus prendas </p>
-            
-           
-         
     
          <button> Mas informacion <img src="{{ asset('icon/bxs-right-arrow-alt.svg') }}" alt=""> </button>
                        
@@ -46,7 +43,7 @@
      <div class="imagenes">  
         
         <img class="años" src="{{ asset('img/20-negro-png.webp') }}" alt="">
-        <img class="foto" src="{{ asset('img/prendas.pn') }}" alt="">
+        <img class="foto" src="{{ asset('img/prendas.png') }}" alt="">
         <img class="fondo" src="{{ asset('img/geo.png') }}" alt="">
 
      </div>

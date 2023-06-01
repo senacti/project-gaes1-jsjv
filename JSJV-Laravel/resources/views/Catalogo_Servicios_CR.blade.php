@@ -19,7 +19,7 @@
 
       <div class="cuadrolog">
       
-      <a href=" {{ url('/Usuarios') }}"><img class="logo" src="{{ asset('img/Lavamatic La Italiana logo.jpeg') }}" alt="logo"></a>
+      <a href=" {{ url('/') }}"><img class="logo" src="{{ asset('img/Lavamatic La Italiana logo.jpeg') }}" alt="logo"></a>
       </div>
 
       <div class="buscar">

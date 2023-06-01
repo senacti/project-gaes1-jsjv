@@ -93,6 +93,7 @@
 
       <a href=" {{ url('/Registro?) }}">Zapatos</a>
       <img src="{{ asset('img/Zapatos.jpg') }}" alt="Calzado">
+      
 
     </div>
 

@@ -26,7 +26,7 @@
 
             <div class="Nombre">
             <!--Nombres-->
-            <label for="username">Nombres</label>
+            <label for="text">Nombres</label>
             <input type="text" name="ingreseNombre" id="ingreseNombre"placeholder="Ingrese su Nombre" pattern="^[A-Za-z]+$" maxlength="30">
     
             <!--Apeliidos-->

@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/Usuarios', function () {
+Route::get('/', function () {
     return view("Usuarios");
 });
 
@@ -25,44 +25,39 @@ Route::get('/Quienes', function () {
     return view("Quienes");
 });
 
-Route::get('/Pago', function () {
+Route::get('/pago', function () {
     return view("pago");
 });
 
 Route::get('/Index', function () {
     return view("Index");
 });
-
-Route::get('/Form Restablecer Contraseña', function () {
-    return view("form_restablecer_contraseña");
-});
-
-Route::get('/Form Registrarse', function () {
-    return view("form_registrarse");
+Route::get('/form_registrarse', function () {
+    return view("form_registrarse");//El formulario tiene problemas en la redireccion
 });
 
 Route::get('/Form Registro Empleado', function () {
-    return view("Form_Reg_Emp");
+    return view("Form_Reg_Emp");//El formulario tiene problemas en la redireccion 
 });
 
 Route::get('/Error404', function () {
     return view("Error404");
 });
 
-Route::get('/Error505', function () {
-    return view("Error505");
+Route::get('/Error500', function () {
+    return view("Error500");
 });
 Route::get('/Dashboard', function () {
-    return view("Dasboard");
+    return view("Dashboard");
 });
-Route::get('/Dashboard_Ot', function () {
+Route::get('/DashBoard_Ot', function () {
     return view("DashBoard_Ot");
 });
 Route::get('/Dashboard_Inv', function () {
-    return view("Dashboard_Inv");
+    return view("Dashboard_Inv");// Hay un error que no se entiende
 });;
 Route::get('/Dashboard_GE', function () {
-    return view("Dashboard_GE");
+    return view("Dashboard_GE");// Hay un error que no se entiende 
 });
 Route::get('/Dashboard_GA', function () {
     return view("Dashboard_GA");
@@ -70,9 +65,12 @@ Route::get('/Dashboard_GA', function () {
 Route::get('/con_olvidada', function () {
     return view("con_olvidada");
 });
+Route::get('/form_restablecer_contraseña', function () {
+    return view("form_restablecer_contraseña");
+});
 Route::get('/Catalogo_Servicios_CR', function () {
     return view("Catalogo_Servicios_CR");
 });
 Route::get('/Catalogo_Servicios_SR', function () {
-    return view("Catalogo_Sevicios_SR");
+    return view("Catalogo_Servicios_SR");// Hay un error que no se entiende 
 });
