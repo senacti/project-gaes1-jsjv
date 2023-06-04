@@ -12,8 +12,10 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::get('/', function () {
+    return view("welcome");
+});
+Route::get('/Usuario', function () {
     return view("Usuarios");
 });
 
@@ -74,3 +76,6 @@ Route::get('/Catalogo_Servicios_CR', function () {
 Route::get('/Catalogo_Servicios_SR', function () {
     return view("Catalogo_Servicios_SR");// Hay un error que no se entiende 
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
