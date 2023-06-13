@@ -1,5 +1,7 @@
 <?php
 
+
+use App\Http\Controllers\ActividadesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,6 +14,25 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+//Ruta para mostrar los datos en la tabla actividades  
+Route::get("/actividades",[ActividadesController::class,"index"])->name("Crud_actividades.Index");
+
+//Ruta para regiostrar los datos en la tabla 
+Route::post("/regisActividad",[ActividadesController::class,"create"])->name("Crud_actividades.Create");
+
+//Ruta para actualizar los datos en la tabla actividades
+Route::post("/modifActividad",[ActividadesController::class,"update"])->name("Crud_actividades.update");
+
+//Ruta para eliminar los datos en la tabla actividades
+Route::get("/elimifActividad/{id}", [ActividadesController::class, "delete"])->name("Crud_actividades.delete");
+
+
+//Rutas de las vistas 
+/*
+Route::get('/actividades', function () {
+    return view("actividades");
+});
 Route::get('/', function () {
     return view("welcome");
 });
@@ -79,3 +100,4 @@ Route::get('/Catalogo_Servicios_SR', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+*/
