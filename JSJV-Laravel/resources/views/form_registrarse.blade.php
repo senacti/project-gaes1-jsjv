@@ -12,7 +12,7 @@
         <a href= "Registro.html" class="logo">
 
             <img src="img/LOGO MORADO LAVAMATIC.png" alt="">
-     
+
          </a>
     </header-->
 
@@ -23,7 +23,7 @@
       <a href=" {{ url('/Registro') }}" class="imgregistro">
         <img src="{{ asset('img/LOGO MORADO LAVAMATIC.png') }}" alt="">
       </a>
-      
+
 
         <form action="{{ url('/Dashboard')}}" class="form" id="formulario">
           <h1 class="title">Formulario de Registro</h1>
@@ -35,34 +35,34 @@
             <input type="number" class="input" name="Telefono" id="Telefono" placeholder="a" required >
             <label for="" class="label"> Telefono</label>
           </div>
-    
+
           <div class="inputContainer">
             <input type="email" class="input" name="correo" id="correo" placeholder="a" required>
             <label for="" class="label">Correo</label>
           </div>
-    
+
           <div class="inputContainer">
             <input type="text" class="input" placeholder="a" required>
             <label for="" class="label">Usuario</label>
           </div>
-    
+
           <div class="inputContainer">
             <input type="password" class="input" placeholder="a" required>
             <label for="" class="label">Contraseña</label>
           </div>
-    
+
           <div class="inputContainer">
             <input type="password" class="input" placeholder="a" required>
             <label for="" class="label">Confirmar Contraseña</label>
           </div>
 
-          
+
           <button type="submit" class="submitBtn" value="Continuar">
           <!--a href="DashBoard.html"target="_blank" input type="submit" class="submitBtn" value="Continuar" --> Continuar </a>
 
-         
+
         </form>
-        
+
       </div>
 </body>
 <script src="{{ asset('js/registro.js') }}"></script>

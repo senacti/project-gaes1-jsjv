@@ -13,7 +13,7 @@
 
 </head>
 <body>
- 
+
   <!--Barra-->
   <header class="menu">
 
@@ -29,14 +29,14 @@
       </div>
 
     <ul class="barra">
-      
+
       <!--Pedidos-->
       <!--div class="Peid">
       <img src="icon/Serivicios.png" alt="Pedidos">
       <li><a href="#">Pedidos</a></li>
       </div-->
 
-    
+
 
     </ul>
 
@@ -44,10 +44,10 @@
       <div class="admin">
       <img class="UsIcon" src="{{ asset('img/user.svg') }}" alt="UsuarioIcono">
 
-      
+
       <h2><a href=" {{ url('/Registro') }}" class="Admin">Iniciar sesion</h2></a>
       </div>
-      
+
       <!--Configuraciones-->
       <!--div class="Confi">
       <img src="icon/configuracion.png" alt="Ajustes">
@@ -59,13 +59,13 @@
  <h1 class="Titulo">Elije un Servicio</h1>
 
   <!--Vista del catalogo de Servicios-->
-  <div class="Catalogo"> 
+  <div class="Catalogo">
 
     <div class="servicio1">
-      
+
       <a href=" {{ url('/Registro') }}">Muebles</a>
       <img src="{{ asset('img/Muebles.jpg') }}" alt="Muebles">
-      
+
     </div>
 
     <div class="servicio2">
@@ -91,9 +91,9 @@
 
     <div class="servicio5">
 
-      <a href=" {{ url('/Registro?) }}">Zapatos</a>
+      <a href=" {{ url('/Registro') }}">Zapatos</a>
       <img src="{{ asset('img/Zapatos.jpg') }}" alt="Calzado">
-      
+
 
     </div>
 

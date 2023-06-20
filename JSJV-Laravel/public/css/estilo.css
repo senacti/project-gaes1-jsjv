@@ -2,7 +2,7 @@ html{
     font-size: 62.5%;
 }
 body{
-padding: 0;    
+padding: 0;
 margin: 0;
 box-sizing: border-box;
 background: #800080;  /* fallback for old browsers */
@@ -18,7 +18,10 @@ a{
     font-size: 200%;
 }
 
-
+ h1 {
+ text-align: center;
+ font-family: 'Inter', sans-serif;
+ }
 header{
 display: flex;
 min-height: 100px;
@@ -33,7 +36,7 @@ position: relative;
 }
 
 .logo{
-    
+
 display: flex;
 align-items: center;
 padding-left: 10px;
@@ -42,7 +45,7 @@ padding-left: 10px;
 .logo img{
 height: 100px;
 
-    
+
 }
 
 nav a {
@@ -75,7 +78,7 @@ nav a:hover{
     }
 
     nav{
-        padding: 10px 0px; 
+        padding: 10px 0px;
     }
 }
 
@@ -121,7 +124,7 @@ background: linear-gradient(to right, #734b6d, #42275a); /* W3C, IE 10+/ Edge, F
  transition: width 0.5s;
  border-radius: 20px;
  cursor: pointer;
- 
+
 }
 
 .informacion button img{
@@ -171,7 +174,7 @@ background: linear-gradient(to right, #734b6d, #42275a); /* W3C, IE 10+/ Edge, F
 
 
 }
- 
+
 .imagenes .fondo {
 
     position: absolute;
@@ -229,8 +232,8 @@ background: linear-gradient(to right, #734b6d, #42275a); /* W3C, IE 10+/ Edge, F
     padding: 20px 40px;
     box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
   }
-  
-  
+
+
   .title {
     font-size: 50px;
     margin-bottom: 50px;
@@ -262,8 +265,8 @@ display: none;
     background: none;
     z-index: 1;
   }
-  
-  
+
+
   ::placeholder {
     color: transparent;
   }
@@ -295,9 +298,9 @@ display: none;
 
     text-align: center;
     width: 32%;
-    
+
   }
-  
+
   .submitBtn:hover {
     background-color: #9867C5;
     transform: translateY(-2px);
@@ -326,7 +329,7 @@ display: none;
   }
 
   .imgregistro {
-    
+
     position: relative;
     right: 5%;
   }
@@ -370,11 +373,11 @@ a:hover {
 #sidebar-container {
     min-height: 100vh;
 }
-  
+
 #sidebar-container .logo{
     padding: 0.875rem 1.25rem;
 }
-  
+
 #sidebar-container .menu {
     width: 18rem;
 }
@@ -397,7 +400,7 @@ a:hover {
     border-right: 1px solid var(--grey);
 }
 
-  
+
 @media (max-width: 768px) {
     #sidebar-container {
       display: none;
@@ -409,4 +412,3 @@ a:hover {
 
 
 
-  

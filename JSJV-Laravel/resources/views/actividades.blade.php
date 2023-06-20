@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actividades</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    
 </head>
 <body>
     <h1 class="text-center p-3">Listado de Actividades</h1>
-    
+    <a href="{{route('actividades.pdf')}}" class="btn btn-success">PDF</a>
     @if(session("correcto"))
     <div class="alert alert-success">{{session("correcto")}}</div>
     @endif
@@ -69,32 +70,32 @@
             </div>  
         </div>
         
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Id Actividad</th>
-                    <th scope="col">Estado Actividad</th>
-                    <th scope="col">Fecha Actividad</th>
-                    <th scope="col">Descripción Actividad</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody class="table-group-divider">
-                @foreach ($datos as $item)
-                <tr>
-                    <th>{{ $item->id_Actividad}}</th>
-                    <td>{{ $item->estadoActividad }}</td>
-                    <td>{{ $item->fechaActividad }}</td>
-                    <td>{{ $item->descripcionActividad }}</td>
-                    <td>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditar{{$item->id_Actividad}}">Modificar</button>
-                        <button data-bs-href="{{ route('Crud_actividades.delete', $item->id_Actividad) }}" onclick="return res()" type="button" class="btn btn-danger">Eliminar</button>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Id Actividad</th>
+                                            <th scope="col">Estado Actividad</th>
+                                            <th scope="col">Fecha Actividad</th>
+                                            <th scope="col">Descripción Actividad</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="table-group-divider">
+                                        @foreach ($datos as $item)
+                                        <tr>
+                                            <th>{{ $item->id_Actividad}}</th>
+                                            <td>{{ $item->estadoActividad }}</td>
+                                            <td>{{ $item->fechaActividad }}</td>
+                                            <td>{{ $item->descripcionActividad }}</td>
+                                            <td>
+                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditar{{$item->id_Actividad}}">Modificar</button>
+                                                <button data-bs-href="{{ route('Crud_actividades.delete', $item->id_Actividad) }}" onclick="return res()" type="button" class="btn btn-danger">Eliminar</button>
 
-                    </td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
     </div>
 
     @foreach ($datos as $item)

@@ -1,72 +1,62 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/estilo.css') }}">
-    <title>Inicio Sesion</title>
+
 </head>
+
 <body>
+    <div class="signupFrm">
 
-    
-    
-  <!--<header>
-      <a href= "Index.html" class="logo">
-
-          <img src="LOGO MORADO LAVAMATIC.png" alt="">
-   
-       </a>
-  </header-->
+        <a href=" {{ url ('/Index') }}" class="imgregistro">
+          <img src="{{ asset('img/LOGO MORADO LAVAMATIC.png') }}" alt="">
+        </a>
 
 
+          <form action="{{ route ('login') }}" id="formulario" class="form" method="POST">
+            @csrf
+            <h1 class="title">Inicio de sesion</h1>
 
-   <div class="signupFrm">
+            <div class="inputContainer">
+              <input type="email" name="correo" id="correo" class="input" placeholder="a" required>
+              <label for="" class="label">Correo</label>
+            </div>
 
-    <a href=" {{ url ('/Index') }}" class="imgregistro">
-      <img src="{{ asset('img/LOGO MORADO LAVAMATIC.png') }}" alt="">
-    </a>
-    
+            <div class="inputContainer">
+              <input type="text" class="input"name="usuario" id="usuario" placeholder="a" required>
+              <label for="" class="label">Usuario</label>
+            </div>
 
-      <form action="{{ route('home') }}" id="formulario" class="form" method="post">
-                                      @csrf 
-        <h1 class="title">Inicio de sesion</h1>
-        <div class="inputContainer">
-          <input type="email" name="correo" id="correo" class="input" placeholder="a" required>
-          <label for="" class="label">Correo</label>
+            <div class="inputContainer">
+              <input type="password" class="input"name="contraseña" id="contraseña" placeholder="a" required>
+              <label for="" class="label">Contraseña</label>
+            </div>
+
+            <!--div class="inputContainer">
+              <input type="password" class="input"name="Confirmar" id="Confirmar" placeholder="a" required>
+              <label for="" class="label">Confirmar Contraseña</label>
+            </div-->
+
+            <br><a href="{{url('/con_olvidada')}}">¿No recuerda su contraseña ?</a><br>
+            <br><a href="{{route ('register')}}">Crear Cuenta</a><br>
+
+            <!--input type="submit" href="DashBoard.html "class="submitBtn"value="Entrar"-->
+            <!--a href="DashBoard.html" class="submitBtn" > Continuar</a-->
+
+            <button  type="submit" class="submitBtn" value="Continuar">Continuar
+
+
+          </form>
         </div>
-  
-        <div class="inputContainer">
-          <input type="text" class="input"name="usuario" id="usuario" placeholder="a" required>
-          <label for="" class="label">Usuario</label>
-        </div>
-  
-        <div class="inputContainer">
-          <input type="password" class="input"name="contraseña" id="contraseña" placeholder="a" required>
-          <label for="" class="label">Contraseña</label>
-        </div>
-  
-        <!--div class="inputContainer">
-          <input type="password" class="input"name="Confirmar" id="Confirmar" placeholder="a" required>
-          <label for="" class="label">Confirmar Contraseña</label>
-        </div-->
-
-        <br><a href="{{url('/con_olvidada')}}">¿No recuerda su contraseña ?</a><br> 
-        <br><a href="{{route('register')}}">Crear Cuenta</a><br>
-
-        <!--input type="submit" href="DashBoard.html "class="submitBtn"value="Entrar"-->
-        <!--a href="DashBoard.html" class="submitBtn" > Continuar</a-->
-
-        <button  type="submit" class="submitBtn" value="Continuar">Ingresar</button>
-        
-       
-      </form>
-    </div>
-    
-
-  <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
   </script>

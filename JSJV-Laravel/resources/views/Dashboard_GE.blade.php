@@ -14,7 +14,7 @@
 
     <!--  JS -->
     <script src=" {{ asset('/js/app.js') }}" defer></script>
-    
+
 </head>
 <body>
 
@@ -22,13 +22,13 @@
         <div class="cuadrolog">
             <a href=" {{ url('/Dashboard') }}"><img class="logo" src="{{ asset('img/Lavamatic La Italiana logo.jpeg') }}" alt="logo"></a>
             </div>
-           
+
             <nav>
                 <a href=""></a>
 
             </nav>
 
-        
+
            </div>
            <div class="menuadmin">
             <button>Santiago Godoy</button>
@@ -38,14 +38,14 @@
             <a href="#">Informacion personal</a>
             <a href=" {{ url('/Index') }}">Cerrar sesion</a>
             </div>
-          </div>             
+          </div>
     </header>
-    
+
 
     <div class="menu-dashboard">
         <!-- TOP MENU -->
         <div class="top-menu">
-            
+
             <div class="toggle">
                 <i class='bx bx-menu'></i>
             </div>
@@ -59,14 +59,14 @@
         <div class="menu">
             <div class="enlace">
                 <i class="bx bx-grid-alt"></i>
-                <span ><a href=" {{ url(/'DashBoard_Ot') }}">Orden de trabajo</a></span>
+                <span ><a href=" {{ url(' /DashBoard_Ot') }}">Orden de trabajo</a></span>
 
             </div>
 
             <div class="enlace" >
                 <i class="bx bx-user"></a></i>
                 <span ><a href=" {{ url('/Dashboard_GE') }}">Empleado</a></span>
-                
+
             </div>
 
             <div class="enlace" >
@@ -82,8 +82,8 @@
 
             <div class="enlace">
                 <i class="bx bx-file-blank"></i>
-                <span ><a href=" {{ url('/Error500) }}">Novedades</a></span>
-                
+                <span ><a href=" {{ url('/Error500') }}">Novedades</a></span>
+
             </div>
 
             <div class="enlace">
@@ -102,15 +102,15 @@
             </div>
         </div>
     </div>
-    
+
     <div class="barra de navegacion">
     </div>
 
-        <!--Formulario-->            
+        <!--Formulario-->
         <h1>Registro del Empleado</h1>
         <div class="cont2">
 
-               <form id="formulario" class="form" action=" {{ url('/Dashboard') }}"> 
+               <form id="formulario" class="form" action=" {{ url('/Dashboard') }}">
                    <div class="form_control" action="">
                    <fieldset >
                        <legend>Documento Empleado</legend>
@@ -126,7 +126,7 @@
                        <input type="number" placeholder="Numero identificacion" maxlength="10" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
                    </fieldset>
                </div>
-    
+
                <div class="form_control" action="">
                    <fieldset >
                        <legend>Nombres Empleado</legend>
@@ -136,7 +136,7 @@
                        <input class="placeholder" type="text" placeholder="Segundo apellido"pattern="^[A-Za-z]+$" maxlength="15" required>
                    </fieldset>
                </div>
-    
+
                <div class="form_control" action="">
                    <fieldset>
                        <Legend> Direccion </Legend>
@@ -157,7 +157,7 @@
                        <input class="placeholder" type="text" placeholder="Localidad" required>
                    </fieldset>
                </div>
-    
+
                <div class="form_control" action="">
                    <fieldset>
                        <legend> Datos de Contacto </legend>
@@ -166,7 +166,7 @@
                        <input class="placeholder" type="email" placeholder=" Correo electronico" name="correo" id="correo" required>
                    </fieldset>
                </div>
-    
+
                <div class="form_control" action="">
                    <fieldset>
                        <legend> Datos adicionales</legend>
@@ -203,14 +203,14 @@
                            </select>
                        </fieldset>
                    </div>
-    
+
                    <input class="btn" type="submit" value="Enviar">
-                   <input class="btn2" type="reset" value="Limpiar">   
+                   <input class="btn2" type="reset" value="Limpiar">
                </form>
-            
+
                 <!--<input class="btn" type="submit" value="Enviar">
-                <input class="btn2" type="reset" value="Limpiar"-->   
-    
+                <input class="btn2" type="reset" value="Limpiar"-->
+
            </div>
 
     <div class="cuadro2">
@@ -219,25 +219,25 @@
     <div class="tabla1">
         <p>Empleados</p>
     <table>
-                
+
         <tr>
         <th>Nombre Empleado</th>
         <th>Numero telefono</th>
         <th>Numero Id</th>
         </tr>
-    
+
         <tr>
             <td>Santiago Millan</td>
             <td>3212199775</td>
             <td>1000365288</td>
         </tr>
-    
+
         <tr>
             <td>Jaider Aponte</td>
             <td>321689298</td>
             <td>1000294831</td>
         </tr>
-    
+
         <tr>
             <td>Santiago Godoy</td>
             <td>3019760954</td>
@@ -249,18 +249,18 @@
             <td>341523132</td>
             <td>1000765342</td>
         </tr>
-    
+
         <tr class>
             <td colspan="2">TOTAL Empleados Registrados</td>
             <td>3</td>
         </tr>
-    
+
     </table>
     </div>
 
     <!--div class="tabla2">
     <table>
-        <p>Datos Cliente</p>      
+        <p>Datos Cliente</p>
         <tr>
         <th>Nombres</th>
         <th>Apellidos</th>
@@ -268,7 +268,7 @@
         <th>Telefono</th>
         <th>Dirección</th>
         </tr>
-    
+
         <tr>
             <td>Santiago Julian</td>
             <td>Millan</td>
@@ -276,7 +276,7 @@
             <td>1175539183</td>
             <td>Calle 44 Sur #72C</td>
         </tr>
-    
+
     </table>
     </div-->
 

@@ -6,11 +6,12 @@ use App\Models\Actividades;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class ActividadesController extends Controller
 {
     /**
-     Se muestran los datos 
+     Se muestran los datos
      */
     public function index()
     {
@@ -18,19 +19,33 @@ class ActividadesController extends Controller
         return view("actividades")->with("datos",$datos);
     }
 
+
+    /**
+     * Funcion PDF.
+     */
+
+     public function pdf(){
+        $actividades = actividades::all();
+        $pdf = Pdf::loadView('PDF/actividadesPDF', compact('actividades'));
+        return $pdf->stream();
+        //return view('PDF/actividadesPDF');
+    }
+    
+    
+
     /**
      * Show the form for creating a new resource.
      */
     public function create(Request $request)
     {
         try {
-            $sql=DB::insert('insert into actividades (id_Actividad, estadoActividad, fechaActividad, descripcionActividad) values (?, ?, ?, ?)', 
+            $sql=DB::insert('insert into actividades (id_Actividad, estadoActividad, fechaActividad, descripcionActividad) values (?, ?, ?, ?)',
             [
               $request->txtCodigo,
               $request->txtEstado,
               $request->txtFecha,
               $request->txtDescrip,
-                
+
             ]);
         } catch (\Throwable $th) {
             $sql = 0;
@@ -40,7 +55,7 @@ class ActividadesController extends Controller
         } else {
             return back()->with("incorrecto","Error al registrar Actividad");
         }
-        
+
     }
 
     /**
@@ -56,7 +71,7 @@ class ActividadesController extends Controller
      */
     public function show(Actividades $actividades)
     {
-     
+
     }
 
     /**
@@ -73,7 +88,7 @@ class ActividadesController extends Controller
     public function update(Request $request)
     {
         try {
-            $sql=DB::update('update actividades set estadoActividad=?, fechaActividad=?, descripcionActividad=? where id_Actividad=?', 
+            $sql=DB::update('update actividades set estadoActividad=?, fechaActividad=?, descripcionActividad=? where id_Actividad=?',
             [
                 $request->txtEstado,
                 $request->txtFecha,
@@ -108,6 +123,6 @@ class ActividadesController extends Controller
         } else {
             return back()->with("incorrecto","Error al eliminar Actividad");
         }
-        
+
     }
 }
