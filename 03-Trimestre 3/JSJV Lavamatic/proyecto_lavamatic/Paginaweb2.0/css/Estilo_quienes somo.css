@@ -1,0 +1,48 @@
+body{
+    background: #5f44ac;  
+    background: linear-gradient(to right, #eaafc8, #654ea3ab), url(../img/doblando.jpg);  
+    background: linear-gradient(to right, #eaafc898, #654ea3a6), url(../img/doblando.jpg); 
+    background-size: 1750px;
+    background-attachment:  fixed;
+    position: relative;
+}
+.contenedor-sobre-nosotros{
+    height: 50%;
+    width: 50%;
+    margin-top: 6%;
+    margin-left: 25%;
+    margin-bottom: 50%;
+    margin-right: 25%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.sobre-nosotros.contenido-de-textos{
+    width: 48%;
+    }
+    .contenido-de-textos h3{
+        color: #fff;
+        margin-bottom: 15px;
+    }
+    .contenido-de-textos h3 span{
+       background: #5d2c85;
+       color: #fff;
+       border-radius: 50%;
+       display: inline-block;
+       text-align: center;
+       width: 30px;
+       height: 30px;
+       padding: 2px;
+       box-shadow: 0 0 6px 0 rgba(0, 0, 0, 5);
+       margin-right: 5px;
+    }
+    .contenido-de-textos p{
+        padding: 0px 0px 30px 15px;
+        font-weight: 300;
+        text-align: justify;}
+        .titulo{
+            margin-top: 6%;
+    margin-left: 25%;
+    margin-bottom: 6%;
+    margin-right: 25%;
+    color: #5d2c85;
+        }

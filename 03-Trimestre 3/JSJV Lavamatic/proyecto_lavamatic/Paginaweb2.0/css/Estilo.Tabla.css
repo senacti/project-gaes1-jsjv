@@ -1,0 +1,79 @@
+
+.cuadro {
+    width: 65%;
+    height: auto;
+    background-color: #490349;
+    
+    border: 3px solid black;
+    border-radius: 20px;
+
+    position: absolute;
+    z-index: -1;
+    top: 75%;
+    left: 23.5%;
+}
+.cuadro2 {
+    width: 65%;
+    height: auto;
+    background-color: #490349;
+    
+    border: 3px solid black;
+    border-radius: 20px;
+
+    position: absolute;
+    z-index: -1;
+    top: 83%;
+    left: 23.5%;
+}
+/*Formularios*/
+
+
+/*Tabla uno*/
+.tabla1 p{
+    font-size: 20px;
+    color: white;
+    text-align:center;
+}
+.tabla1 table{
+    margin-top: 1%;
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 60%;
+    height: 50%;
+}
+.tabla1 td,th{
+    border: 2px solid black;
+    padding-left: 20px;
+    text-align: center;
+    color: white;
+    font-size: 15px
+}
+.tabla1 th{
+    background-color: black;
+}
+
+/*Tabla dos*/
+.tabla2  p{
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
+.tabla2 table{
+    margin-top: 1%;
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 60%;
+    height: 50%;
+}
+.tabla2 th{
+    background-color: black;
+}
+.tabla2 td,th{
+    border: 2px solid black;
+    padding-left: 20px;
+    text-align: center;
+    color: white;
+    font-size: 15px
+}
