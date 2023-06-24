@@ -3,6 +3,7 @@ use App\Http\Controllers\EmpleadosController;
 use App\Http\Controllers\OrdenTrabajoController;
 use App\Http\Controllers\CrudController;
 use App\Http\Controllers\ActividadesController;
+use App\Models\OrdenTrabajo;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,10 +19,14 @@ use Illuminate\Support\Facades\Route;
 //Rutas para los PDF
 //-----------------------
 //Actividades PDF
+
 Route::get('PDF/actividadesPDF',[ActividadesController::class,'pdf'])->name('actividades.pdf');
 
 //Inventarios PDF
 Route::get('PDF/inventariosPDF',[CrudController::class,'pdf'])->name('inventarios.pdf');
+//Ordentrabajo PDF
+Route::get('PDF/otPDF',[OrdenTrabajoController::class,'pdf'])->name('Ordentrabajo.pdf');
+
 
 //Ruta para mostrar los datos en la tabla actividades
 Route::get("/Actividades",[ActividadesController::class,"index"])->name("Crud_actividades.Index");
@@ -43,6 +48,17 @@ Route::post('/registrarInventario', [CrudController::class,"create"])->name("cru
 Route::post('/modificarInventario', [CrudController::class,"update"])->name("crud.update");
 //ruta para eliminar inventario
 Route::get('/eliminarInventario--{id}', [CrudController::class,"delete"])->name("crud.delete");
+
+
+
+//ruta para leer el OT
+Route::get('/ordenTrabajo', [OrdenTrabajoController::class,"index"])->name("crudOT.Index");
+//ruta para añadir OT
+Route::post('/registrarOt', [OrdenTrabajoController::class,"create"])->name("crudOT.create");
+//ruta para modificar OT
+Route::post('/modificarOT', [OrdenTrabajoController::class,"update"])->name("crudOT.update");
+//ruta para eliminar OTt
+Route::get('/eliminarOT--{id}', [OrdenTrabajoController::class,"delete"])->name("crudOT.delete");
 
 Route::get('/Index', function () {
     return view("Index");
@@ -119,6 +135,6 @@ Route::get('/Catalogo_Servicios_SR', function () {
     return view("Catalogo_Servicios_SR");// Hay un error que no se entiende
 });
 
-Auth::routes();
+//Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
