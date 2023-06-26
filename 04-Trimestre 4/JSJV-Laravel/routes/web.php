@@ -1,5 +1,5 @@
 <?php
-use App\Http\Controllers\EmpleadosController;
+use App\Http\Controllers\SueldoController;
 use App\Http\Controllers\OrdenTrabajoController;
 use App\Http\Controllers\CrudController;
 use App\Http\Controllers\ActividadesController;
@@ -21,13 +21,13 @@ use Illuminate\Support\Facades\Route;
 //Actividades PDF
 
 Route::get('PDF/actividadesPDF',[ActividadesController::class,'pdf'])->name('actividades.pdf');
-
 //Inventarios PDF
 Route::get('PDF/inventariosPDF',[CrudController::class,'pdf'])->name('inventarios.pdf');
 //Ordentrabajo PDF
 Route::get('PDF/otPDF',[OrdenTrabajoController::class,'pdf'])->name('Ordentrabajo.pdf');
-
-
+//Sueldos PDF
+Route::get('PDF/sueldosPDF',[CrudController::class,'pdf'])->name('sueldos.pdf');
+//-------------------------------------------------------------------------------------------------------------------------------------------------------
 //Ruta para mostrar los datos en la tabla actividades
 Route::get("/Actividades",[ActividadesController::class,"index"])->name("Crud_actividades.Index");
 
@@ -40,6 +40,7 @@ Route::post("/modifActividad",[ActividadesController::class,"update"])->name("Cr
 //Ruta para eliminar los datos en la tabla actividades
 Route::get("/elimifActividad/{id}", [ActividadesController::class, "delete"])->name("Crud_actividades.delete");
 
+//--------------------------------------------------------------------------------------------------------------------------------------------------------
 //ruta para leer el inventario
 Route::get('/inventario', [CrudController::class,"index"])->name("crud.Index");
 //ruta para añadir inventario
@@ -47,7 +48,36 @@ Route::post('/registrarInventario', [CrudController::class,"create"])->name("cru
 //ruta para modificar inventario
 Route::post('/modificarInventario', [CrudController::class,"update"])->name("crud.update");
 //ruta para eliminar inventario
-Route::get('/eliminarInventario--{id}', [CrudController::class,"delete"])->name("crud.delete");
+Route::get('/delete/{id}', [CrudController::class, 'delete'])->name('crud.delete');
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//ruta para leer el OT
+Route::get('/ordenTrabajo', [OrdenTrabajoController::class,"index"])->name("crudOT.Index");
+//ruta para añadir OT
+Route::post('/registrarOt', [OrdenTrabajoController::class,"create"])->name("crudOT.create");
+//ruta para modificar OT
+Route::post('/modificarOT', [OrdenTrabajoController::class,"update"])->name("crudOT.update");
+//ruta para eliminar OTt
+Route::get('/eliminarOT--{id}', [OrdenTrabajoController::class,"delete"])->name("crudOT.delete");
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------
+//ruta para leer el sueldo
+Route::get('/sueldos', [SueldoController::class,"index"])->name("CRUDsueldo.Index");
+
+//ruta para añadir pago
+Route::post('/registrarSueldo', [SueldoController::class,"create"])->name("CRUDsueldo.create");
+
+//ruta para modificar sueldo
+Route::post('/sueldo/update/{id_Sueldo}', [SueldoController::class, 'update'])->name('CRUDsueldo.update');
+
+
+//ruta para eliminar sueldo
+Route::get('/eliminarSueldo--{id}', [SueldoController::class,"delete"])->name("CRUDsueldo.delete");
+
+//Vistas 
+//-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -60,13 +90,11 @@ Route::post('/modificarOT', [OrdenTrabajoController::class,"update"])->name("cru
 //ruta para eliminar OTt
 Route::get('/eliminarOT--{id}', [OrdenTrabajoController::class,"delete"])->name("crudOT.delete");
 
-Route::get('/Index', function () {
+Route::get('/', function () {
     return view("Index");
 });
 
-Route::get('/', function () {
-    return view("welcome");
-});
+
 //Rutas de las vistas
 /*
 Route::get('/actividades', function () {
@@ -89,9 +117,6 @@ Route::get('/pago', function () {
     return view("pago");
 });
 
-Route::get('/Index', function () {
-    return view("Index");
-});
 Route::get('/form_registrarse', function () {
     return view("form_registrarse");//El formulario tiene problemas en la redireccion
 });
@@ -136,5 +161,9 @@ Route::get('/Catalogo_Servicios_SR', function () {
 });
 
 //Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

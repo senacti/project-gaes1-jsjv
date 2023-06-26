@@ -26,7 +26,8 @@
      <nav>
         <a href=" {{ url ('/Quienes') }}" >¿Quienes somos?</a>
         <a href=" {{ url ('/Catalogo_Servicios_SR') }}" > Servicios </a>
-        <a href=" {{ url ('/register') }}" > Iniciar Sesion </a>
+        <a href="{{route('login')}}" > Iniciar Sesion </a>
+        
      </nav>
 
     </header>

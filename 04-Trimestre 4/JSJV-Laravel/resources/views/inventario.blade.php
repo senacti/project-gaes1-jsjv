@@ -2,28 +2,130 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inventario</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-   <!-- ICONOS-->
-    <script src="https://kit.fontawesome.com/6257f22623.js" crossorigin="anonymous"></script>
+    <title>CRUDinventario</title>
+    <!-- BOX ICONS -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!--  CSS -->
+    <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 
-
+    <!--  JS -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    
 </head>
 <body>
 
-    <h1 class="text-center">Inventario</h1>
-    <a href="{{route('inventarios.pdf')}}" class="btn btn-success">PDF</a>
-    <!-- MENSAJE DE CORRECTO E INCORRECTO-->
-    @if (session('Correcto'))
-        <div class="alert alert-succes">{{session('Correcto')}}</div>
-    @endif
-    @if (session('Incorrecto'))
-        <div class="alert alert-danger">{{session('Incorrecto')}}</div>
-    @endif
+    <header class="menu">
+        <div class="cuadrolog">
+            <a href=" {{ url ('/Dashboard') }}"><img class="logo" src="{{ asset('img/Lavamatic La Italiana logo.jpeg') }}" alt="logo"> </a>
+            </div>
+           
+            <nav>
+                <a href=""></a>
+
+            </nav>
+
+        
+           </div>
+           <div class="menuadmin">
+            <button>Santiago Godoy</button>
+            <img class="fotoad" src="{{ asset('img/Administrador.jpg') }}" alt="fotoad">
+            <div class="menuadminl">
+            <a href="#">Informacion de empleados</a>
+            <a href="#">Informacion personal</a>
+            <a href=" {{ url('Index') }}">Cerrar sesion</a>
+            </div>
+          </div>             
+    </header>
+    
+
+    <div class="menu-dashboard">
+        <!-- TOP MENU -->
+        <div class="top-menu">
+            
+            <div class="toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </div>
+        <!-- INPUT SEARCH -->
+        <div class="input-search">
+            <i class='bx bx-search'></i>
+            <input type="text" class="input" placeholder="Buscar">
+        </div>
+        <!-- MENU -->
+        <div class="menu">
+            <div class="enlace">
+                <i class="bx bx-grid-alt"></i>
+                <span ><a href=" {{ route('crudOT.Index') }}">Orden de trabajo</a></span>
+
+            </div>
+
+            <div class="enlace" >
+                <i class="bx bx-user"></a></i>
+                <span ><a href="{{ route('CRUDsueldo.Index') }}">Sueldos</a></span>
+                
+            </div>
+
+            <div class="enlace" >
+                <i class="bx bx-grid-alt" ></i>
+                <span ><a href="{{ route('Crud_actividades.Index') }}">Actividades</a></span>
+
+            </div>
+
+            <div class="enlace">
+                <i class="bx bx-message-square"></i>
+                <span ><a href=" {{ url ('/Error404') }}">Mensajes</a></span>
+            </div>
+
+            <div class="enlace">
+                <i class="bx bx-file-blank"></i>
+                <span ><a href=" {{ url('/Error500') }}">Novedades</a></span>
+                
+            </div>
+
+            <div class="enlace">
+                <i class="bx bx-cart"></i>
+                <span ><a href=" {{ route('crud.Index') }}">Inventarios</a></span>
+            </div>
+
+            <!--div class="enlace">
+                <i class="bx bx-heart"></i>
+                <span>Favoritos</span>
+            </div-->
+
+            <div class="enlace">
+                <i class="bx bx-cog"></i>
+                <span ><a href=" {{ url ('/Error404') }}">Configuracion</a></span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="barra de navegacion">
+    </div>
+
+
+             
+           </div>
+<!-- Menu -->
+<ul class="list-unstyled text-end" style="position: fixed; bottom: 0; left: 0; right: 0;">
+  <li class="mb-2">
+    <a href="{{route('inventarios.pdf')}}" class="btn btn-danger btn-block"> PDF </a>
+  </li>
+  <li class="mb-2">
+    <a href="{{route('inventarios.pdf')}}" class="btn btn-success btn-block">Excel</a>
+  </li>
+</ul>
+    
+<div class="container mt-5">
+    <h1 class="text-center p-5">Inventario</h1>
+  
+  
              <!-- NOTIFICACION DE DELETE-->
-    <script>
-        var res = function() {
+     <script>
+    var res = function() {
         var button = event.target;
         var href = button.getAttribute('data-bs-href');
         var not = confirm("¿Estás seguro de eliminar la actividad?");
@@ -36,6 +138,13 @@
 
 
     <div class="p-5 table-responsive">
+        <!-- MENSAJE DE CORRECTO E INCORRECTO-->
+    @if (session('Correcto'))
+        <div class="alert alert-succes">{{session('Correcto')}}</div>
+    @endif
+    @if (session('Incorrecto'))
+        <div class="alert alert-danger">{{session('Incorrecto')}}</div>
+    @endif
       <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalRegistrar">Añadir Inventario</button>
 
  <!-- Modal AÑADIR DATOS -->
@@ -94,8 +203,8 @@
 </div>
 
 
-    <table class="table">
-  <thead>
+    <table class="table" class="mb-4">
+  <thead >
     <tr>
       <th scope="col">ID inventario</th>
       <th scope="col">Nombre proveedor </th>
@@ -108,9 +217,6 @@
   </thead>
   <tbody class="table-group-divider">
 
-
-
-
     @foreach($datos as $item)
     <tr>
       <th>{{$item ->id_Inventarios}}</th>
@@ -120,12 +226,9 @@
       <td>{{$item ->idInsumo}}</td>
       <td>{{$item ->idMaquina}}</td>
       <td>
-          <!-- BOTON DE MODIFICAR-->
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditar{{$item->id_Inventarios}}">Modificar</button>
-
-          <!-- BOTON DE ELIMINAR-->
-          <button data-bs-href="{{ route('crud.delete', $item->id_Inventarios) }}" onclick="return res()" type="button" class="btn btn-danger">Eliminar</button>
-
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditar{{$item->id_Inventarios}}">Modificar</button>
+      <button data-bs-href="{{ route('crud.delete', $item->id_Inventarios) }}" onclick="return res()" type="button" class="btn btn-danger">Eliminar</button>
+      
            <!--<i class="fa-solid fa-delete-left"></i>
           <i class="fa-solid fa-pen-to-square"></i>-->
         </td>
@@ -138,8 +241,6 @@
 
 <!-- Modal modificar datos -->
 @foreach ($datos as $item)
-
-
 <div class="modal fade" id="modalEditar{{$item->id_Inventarios}}" tabindex="-1" aria-labelledby="modalEditarLabel{{$item->id_Inventarios}}" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -190,6 +291,7 @@
 </div>
 @endforeach
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
 </body>
 </html>

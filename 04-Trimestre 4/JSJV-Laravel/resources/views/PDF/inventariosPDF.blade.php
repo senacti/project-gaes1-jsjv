@@ -17,7 +17,7 @@
   <header>
     <!-- place navbar here -->
   </header>
-  <table class="table">
+  <table class="table table-striped">
     <thead>
       <tr>
         <th scope="col">ID inventario</th>

@@ -14,7 +14,7 @@
 
      <div class="signupFrm">
 
-      <a href=" {{ url('/Registro') }}" class="imgregistro">
+      <a href="  {{ url ('/') }}" class="imgregistro">
         <img src="{{ asset('img/LOGO MORADO LAVAMATIC.png') }}" alt="">
       </a>
       

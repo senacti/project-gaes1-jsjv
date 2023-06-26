@@ -21,9 +21,16 @@
 
 body {
     font-family: 'Quicksand', sans-serif;
-    color: var(--blanco);
+    color: var(--negro);
     margin-bottom: 0%;
     padding: 0%;
+}
+body
+{
+    margin: 0%;
+    padding: 0%;
+    background: url(../img/Fondo-lavadoras.png) no-repeat center top;
+    background-size: cover;
 }
 
 

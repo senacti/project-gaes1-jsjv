@@ -15,53 +15,87 @@ class OrdenTrabajoController extends Controller
      */
     public function index()
     {
-        $datos=DB::select(" select * from orden_trabajos");
-        return view("ordenTrabajo")->with("datos",$datos);
+        $datos = DB::select("SELECT * FROM orden_trabajos");
+        return view("ordenTrabajo")->with("datos", $datos);
     }
+
     /**
      * Funcion PDF.
      */
-
-     public function pdf(){
-        $OrdenTrabajo = ordenTrabajo::all();
+    public function pdf()
+    {
+        $OrdenTrabajo = OrdenTrabajo::all();
         $pdf = Pdf::loadView('PDF/otPDF', compact('OrdenTrabajo'));
         return $pdf->stream();
-       
     }
 
     /**
      * Create
      */
-   public function create(Request $request)
-{
-    try {
-        $sql = DB::insert('insert into orden_trabajos (id_Orden_trabajos, valor_total, fecha_de_entrada, cantidad, tipo_producto) values (?, ?, ?, ?, ?)',
-            [
-                $request->txtOT,
-                $request->txtvalor,
-                $request->txtfecha,
-                $request->txtcantidad,
-                $request->txttipo
-            ]);
-    } catch (\Throwable $th) {
-        $sql = false;
+    public function create(Request $request)
+    {
+        try {
+            $sql = DB::insert('INSERT INTO orden_trabajos (id_Orden_trabajos, valor_total, fecha_de_entrada, cantidad, tipo_producto) VALUES (?, ?, ?, ?, ?)',
+                [
+                    $request->txtOT,
+                    $request->txtvalor,
+                    $request->txtfecha,
+                    $request->txtcantidad,
+                    $request->txttipo
+                ]);
+        } catch (\Throwable $th) {
+            $sql = false;
+        }
+
+        if ($sql) {
+            return back()->with("correcto", "Orden de trabajo registrada exitosamente");
+        } else {
+            return back()->with("incorrecto", "Error al registrar la Orden de trabajo");
+        }
     }
-
-    if ($sql) {
-        return back()->with("correcto", "Orden de trabajo registrada exitosamente");
-    } else {
-        return back()->with("incorrecto", "Error al registrar la Orden de trabajo");
-    }
-}
-
-
 
     /**
-     * update
+     * Update
      */
-    public function store(Request $request)
+    public function update(Request $request)
     {
-        //
+        try {
+            $sql = DB::insert('INSERT INTO orden_trabajos (id_Orden_trabajos, valor_total, fecha_de_entrada, cantidad, tipo_producto) VALUES (?, ?, ?, ?, ?)',
+                [
+                    $request->txtOT,
+                    $request->txtvalor,
+                    $request->txtfecha,
+                    $request->txtcantidad,
+                    $request->txttipo
+                ]);
+            if ($sql == 0) {
+                $sql = 1;
+            }
+        } catch (\Throwable $th) {
+            $sql = 0;
+        }
+        if ($sql == true) {
+            return back()->with("correcto", "Orden de trabajo modificada exitosamente");
+        } else {
+            return back()->with("incorrecto", "Error al modificar Orden de trabajo");
+        }
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function delete($id)
+    {
+        try {
+            $sql = DB::delete("DELETE FROM orden_trabajos WHERE id_Orden_trabajos = $id");
+        } catch (\Throwable $th) {
+            $sql = 0;
+        }
+        if ($sql == true) {
+            return back()->with("correcto", "Orden de trabajo eliminada exitosamente");
+        } else {
+            return back()->with("incorrecto", "Error al eliminar Orden de trabajo");
+        }
     }
 
     /**
@@ -79,48 +113,5 @@ class OrdenTrabajoController extends Controller
     {
         //
     }
-
-    /**
-     * Update 
-     */
-    public function update(Request $request)
-    {
-        try {
-            $sql=DB::insert('insert into orden_trabajos (id_Orden_trabajos, valor_total, fecha_de_entrada, cantidad,tipo_producto) values (?, ?, ?, ?, ?)',
-            [
-                $request->txtOT,
-                $request->txtvalor,
-                $request->txtfecha,
-                $request->txtcantidad,
-                $request->txttipo]);
-            if ($sql==0) {
-                $sql=1;
-            }
-        } catch (\Throwable $th) {
-            $sql = 0;
-        }
-        if ($sql == true) {
-            return back()->with("correcto","Orde de trabajo modificada exitosamente");
-        } else {
-            return back()->with("incorrecto","Error al modificar Orden de trabajo");
-        }
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function delete($id)
-    {
-        try {
-            $sql=DB::delete("delete from orden_trabajos where id_Orden_trabajos=$id");
-        } catch (\Throwable $th) {
-            $sql = 0;
-        }
-        if ($sql == true) {
-            return back()->with("correcto","Orden de trabajo se elimino exitosamente");
-        } else {
-            return back()->with("incorrecto","Error al eliminar Orden de trabajo");
-        }
-
-    }
 }
+

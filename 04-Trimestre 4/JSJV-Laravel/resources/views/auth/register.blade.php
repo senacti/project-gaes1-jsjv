@@ -10,59 +10,52 @@
   <!-- Bootstrap CSS v5.2.1 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('css/estilo.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/estilo.css') }}">
 
 </head>
 
 <body>
-    <div class="signupFrm">
 
-        <a href=" {{ url ('/Index') }}" class="imgregistro">
-          <img src="{{ asset('img/LOGO MORADO LAVAMATIC.png') }}" alt="">
-        </a>
+<div class="signupFrm">
 
+<a href=" {{route('login')}}" class="imgregistro">
+  <img src="{{ asset('img/LOGO MORADO LAVAMATIC.png') }}" alt="">
+</a>
 
-          <form action="{{ route ('login') }}" class="form" method="POST">
-            @csrf
-            <h1 class="title">Formulario de Registro</h1>
-            <div class="inputContainer">
-              <input type="text" class="input" name="name" id="form2Example11" pattern="^[A-Za-z]+$" maxlength="35" placeholder="a" required>
-              <label  class="label" id="form2Example11"> Nombre </label>
-            </div>
-            <!--div class="inputContainer">
-              <input type="number" class="input" name="Telefono" id="Telefono" placeholder="a" required >
-              <label for="" class="label"> Telefono</label>
-            </div-->
+                <form  class="form" action="{{route('register')}}" method="POST">
 
-            <div class="inputContainer">
-              <input type="email" class="input" name="email"  id="form2Example11" placeholder="a" required>
-              <label for="form2Example11" class="label"  id="form2Example11">Correo</label>
-            </div>
+                          @csrf
+                          
+        <h1 class="title">Crear Cuenta</h1>
 
-           <!--<div class="inputContainer">
-              <input type="text" class="input" placeholder="a" required>
-              <label for="" class="label">Usuario</label>
-            </div>-->
+        <div class="form-outline mb-4">
+                  <label class="form-label display-6 text-purple fw-bold" for="form2Example11">Nombre</label>
+                  <div class="inputContainer">
+                    <input type="name" name="name" id="form2Example11" class="input">
+                  </div>
+  
+        <div class="form-outline mb-4">
+                  <label class="form-label display-6 text-purple fw-bold" for="form2Example11">Correo</label>
+                  <div class="inputContainer">
+                    <input type="email" name="email" id="form2Example11" class="input">
+                  </div>
+  
+                  <label class="form-label display-6 text-purple fw-bold" for="form2Example22">Contraseña</label>
+                  <div class="inputContainer">
+                  <input type="password" name="password" id="form2Example22" class="input">
+                  </div>
+                  <label class="form-label display-6 text-purple fw-bold" for="form2Example22">Canfirmar Contraseña</label>
+                  <div class="inputContainer">
+                  <input type="password" name="password_confirmation" id="form2Example22" class="input">
+                  </div>
 
-            <div class="inputContainer">
-              <input type="password" class="input" placeholder="a" required>
-              <label for="" class="label">Contraseña</label>
-            </div>
+                  <br><a href="{{route('login')}}">Ir a Login</a><br>
 
-            <div class="inputContainer">
-              <input type="password" class="input" placeholder="a" required>
-              <label for="" class="label">Confirmar Contraseña</label>
-            </div>
+          <button type="submit" class="submitBtn" value="Continuar">Continuar</button>
+      </form>
+      
+</section>
 
-
-            <br><a>Volver a inicio de sesion</a><br>
-            <button type="submit" class="submitBtn" value="Continuar">
-
-            <!--a href="DashBoard.html"target="_blank" input type="submit" class="submitBtn" value="Continuar" --> Continuar </a>
-
-
-          </form>
-        </div>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
   </script>

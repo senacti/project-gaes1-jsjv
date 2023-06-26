@@ -4,32 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Dashboard</title>
+    <title>CRUDot</title>
     <!-- BOX ICONS -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <!--  CSS -->
     <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/Estilos_Form.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/Estilo.Tabla.css') }}">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 
     <!--  JS -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     
 </head>
 <body>
-
-    <header class="menu">
+<header class="menu">
         <div class="cuadrolog">
-
             <a href=" {{ url('/Dashboard') }}"><img class="logo" src="{{ asset('img/Lavamatic La Italiana logo.jpeg') }}" alt="logo"></a>
             </div>
-           
+
             <nav>
                 <a href=""></a>
 
             </nav>
 
-        
+
            </div>
            <div class="menuadmin">
             <button>Santiago Godoy</button>
@@ -37,16 +35,16 @@
             <div class="menuadminl">
             <a href="#">Informacion de empleados</a>
             <a href="#">Informacion personal</a>
-            <a href=" {{ ('/Index') }}">Cerrar sesion</a>
+            <a href=" {{ url('/Index') }}">Cerrar sesion</a>
             </div>
-          </div>             
+          </div>
     </header>
-    
+
 
     <div class="menu-dashboard">
         <!-- TOP MENU -->
         <div class="top-menu">
-            
+
             <div class="toggle">
                 <i class='bx bx-menu'></i>
             </div>
@@ -56,40 +54,40 @@
             <i class='bx bx-search'></i>
             <input type="text" class="input" placeholder="Buscar">
         </div>
-        <!-- MENU -->
-        <div class="menu">
+         <!-- MENU -->
+         <div class="menu">
             <div class="enlace">
                 <i class="bx bx-grid-alt"></i>
-                <span ><a href="{{url('DashBoard_Ot') }}">Orden de trabajo</a></span>
+                <span ><a href=" {{ route('crudOT.Index') }}">Orden de trabajo</a></span>
 
             </div>
 
             <div class="enlace" >
                 <i class="bx bx-user"></a></i>
-                <span ><a href="{{url('/Dashboard_GE') }}">Empleado</a></span>
+                <span ><a href="{{ route('CRUDsueldo.Index') }}">Sueldos</a></span>
                 
             </div>
 
             <div class="enlace" >
                 <i class="bx bx-grid-alt" ></i>
-                <span ><a href="{{url('/Dashboard_GA')}}">Actividades</a></span>
+                <span ><a href="{{ route('Crud_actividades.Index') }}">Actividades</a></span>
 
             </div>
 
             <div class="enlace">
                 <i class="bx bx-message-square"></i>
-                <span ><a href="{{url('/Error404')}}">Mensajes</a></span>
+                <span ><a href=" {{ url ('/Error404') }}">Mensajes</a></span>
             </div>
 
             <div class="enlace">
                 <i class="bx bx-file-blank"></i>
-                <span ><a href="{{url('/Error500')}}">Novedades</a></span>
+                <span ><a href=" {{ url('/Error500') }}">Novedades</a></span>
                 
             </div>
 
             <div class="enlace">
                 <i class="bx bx-cart"></i>
-                <span ><a href="{{url('Dashboard_Inv')}}">Inventarios</a></span>
+                <span ><a href=" {{ route('crud.Index') }}">Inventarios</a></span>
             </div>
 
             <!--div class="enlace">
@@ -99,190 +97,201 @@
 
             <div class="enlace">
                 <i class="bx bx-cog"></i>
-                <span ><a href="{{url('/Error404')}}">Configuracion</a></span>
+                <span ><a href=" {{ url ('/Error404') }}">Configuracion</a></span>
             </div>
         </div>
     </div>
-    
+
     <div class="barra de navegacion">
     </div>
+    <!-- Menu -->
+<ul class="list-unstyled text-end" style="position: fixed; bottom: 0; left: 0; right: 0;">
+  <li class="mb-2">
+    <a href="{{route('Ordentrabajo.pdf')}}" class="btn btn-danger btn-block">PDF</a>
+  </li>
+  <li class="mb-2">
+    <a href="{{route('Ordentrabajo.pdf')}}" class="btn btn-success btn-block">Excel</a>
+  </li>
+</ul>
+<div class="container mt-5">
+<h1 class="text-center p-5">Listado de Actividades</h1>
 
-        <!--Formulario-->            
-        <h1>Registro Orden De trabajo </h1>
-        <div class="cont">
+    
 
-               <form id="form" class="form" action="{{url('/Dashboard')}}"> 
-                   <div class="form_control" action="">
-                   <fieldset >
-                       <legend>Tipo Servicio</legend>
-                       <select class="placeholder" name="Tipo ID" required>
-                           <option value="Tipo id" >Seleccione Tipo Servicio</option>
-                           <option value="Tipo id">Lavado</option>
-                           <option value="Tipo id">Planchado</option>
-                           <option value="Tipo id">Tintura</option>
-                           <option value="Tipo id">Lavado de muebles</option>
-                           <option value="Tipo id">Lavado de tenis</option>
-                           
-                       </select>
-                       <input class="placeholder" type="text" placeholder="Detalle Servicio"pattern="^[A-Za-z]+$" maxlength="20" required>
-                       <input type="placeholder" type="number" placeholder="Cantidad"  maxlength="3" required>
-                   </fieldset>
-               </div>
-    
-               <div class="form_control" action="">
-                   <fieldset >
-                       <legend>Nombres Cliente</legend>
-                       <input class="placeholder" type="text" placeholder=" Primer nombre " pattern="^[A-Za-z]+$" maxlength="12"required>
-                       <input class="placeholder" type="text" placeholder="Segundo nombre " pattern="^[A-Za-z]+$" maxlength="12" required>
-                       <input class="placeholder" type="text" placeholder=" Primer apellido" pattern="^[A-Za-z]+$" maxlength="12" required>
-                       <input class="placeholder" type="text" placeholder="Segundo apellido" pattern="^[A-Za-z]+$" maxlength="12" required>
-                   </fieldset>
-               </div>
-    
-               <div class="form_control" action="">
-                   <fieldset>
-                       <Legend> Direccion </Legend>
-                       <select class="placeholder" name="Direccion" required>
-                           <option value="Tipo">...</option>
-                           <option value="Calle">Calle</option>
-                           <option value="Carrera">Carrera</option>
-                           <option value="Diagonal">Diagonal</option>
-                           <option value="Transversal">Transversal</option>
-                           <option value="Autopista">Autopista</option>
-                           <option value="Avenida">Avenida</option>
-                       </select>
-                       <input class="placeholder" type="text" placeholder="Via principal" required>
-                       <input class="placeholder" type="text" placeholder="Complemento"required >
-                       <label for="">-</label>
-                       <input type="placeholder" type="number" placeholder="Numero" required maxlength="10">
-                       <input class="placeholder" type="text" placeholder="Barrio" required>
-                       <input class="placeholder" type="text" placeholder="Localidad" required>
-                   </fieldset>
-               </div>
-    
-               <div class="form_control" action="">
-                   <fieldset>
-                       <legend> Datos de Contacto </legend>
-                       <input type="number" placeholder="Telefono" maxlength="7" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
-                       <input type="number" placeholder="Celular" maxlength="10" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
-                       <!--input class="placeholder" type="email" placeholder=" Correo electronico" required-->
-                   </fieldset>
-               </div>
-    
-               <!--div class="form_control" action="">
-                   <fieldset>
-                       <legend> Datos adicionales</legend>
-                       <label > Fecha de nacimiento </label>
-                       <input class="placeholder" type="date" >
-                       <label> RH </label>
-                       <select class="placeholder" name="RH">
-                           <option value="RH">...</option>
-                           <option value="RH">O</option>
-                           <option value="RH">A</option>
-                           <option value="RH">B</option>
-                           <option value="RH">AB</option>
-                       </select>
-                       <select class="placeholder" name="Rh">
-                           <option value="Rh">...</option>
-                           <option value="Rh">+</option>
-                           <option value="Rh">-</option>
-                       </select>
-                       <label> Genero </label>
-                       <select class="placeholder" name="Genero">
-                           <option value="Genero">...</option>
-                           <option value="Genero">Masculino</option>
-                           <option value="Genero">Femenino</option>
-                           <option value="Genero">No binario</option>
-                       </select>
-                       <label> Estado Civil</label>
-                           <select class="placeholder" name="Estado Civil">
-                               <option value="Estado civil">...</option>
-                               <option value="Estado civil"> Soltero/a </option>
-                               <option value="Estado Civil"> Casado/a </option>
-                               <option value="Estado Civil">Union libre</option>
-                               <option value="Estado Civil">Separado/a</option>
-                             <option value="Estado Civil">Viudo/a</option>
-                           </select>
-                       </fieldset>
-                   </div-->
-    
-                   <input class="btn" type="submit" value="Enviar">
-                   <input class="btn2" type="reset" value="Limpiar">   
-               </form>
-            
-                <!--<input class="btn" type="submit" value="Enviar">
-                <input class="btn2" type="reset" value="Limpiar"-->   
-    
-           </div>
+    <script>
+    var res = function() {
+        var button = event.target;
+        var href = button.getAttribute('data-bs-href');
+        var not = confirm("¿Estás seguro de eliminar la actividad?");
+        if (not) {
+            window.location.href = href;
+        }
+        return false;
+    };
+    </script>
 
-    <div class="cuadro">
 
-    <!--Tablas-->
-    <div class="tabla1">
-        <p>Orden OT</p>
-    <table>
-                
-        <tr>
-        <th>Tipo de Servicio</th>
-        <th>Cantidad</th>
-        <th>Presio Unitario</th>
-        </tr>
-    
-        <tr>
-            <td>Lavanderia: Chaqueta</td>
-            <td>2</td>
-            <td>$60.000</td>
-        </tr>
-    
-        <tr>
-            <td>Tintoreria: Pantalon</td>
-            <td>1</td>
-            <td>$30.000</td>
-        </tr>
-    
-        <tr>
-            <td>Muebles: Sofa</td>
-            <td>1</td>
-            <td>$80.000</td>
-        </tr>
+    <div class="p-5 table-responsive">
+    <h1 class="text-center p-5">Orden de trabajo</h1>
 
-        <tr>
-            <td>Muebles: Sillon</td>
-            <td>1</td>
-            <td>$80.000</td>
-        </tr>
-    
-        <tr class>
-            <td colspan="2">TOTAL</td>
-            <td>$170.000</td>
-        </tr>
-    
-    </table>
+    <script>
+    var res = function() {
+        var button = event.target;
+        var href = button.getAttribute('data-bs-href');
+        var not = confirm("¿Estás seguro de eliminar la Orden de trabajo?");
+        if (not) {
+            window.location.href = href;
+        }
+        return false;
+    };
+    </script>
+
+
+    <div class="p-5 table-responsive">
+        
+    @if(session("correcto"))
+    <div class="alert alert-success">{{session("correcto")}}</div>
+    @endif
+
+    @if(session("incorrecto"))
+    <div class="alert alert-danger">{{session("incorrecto")}}</div>
+    @endif
+
+        <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalRegistrar">Añadir Orden de trabajo</button>
+
+        <!-- Modal AÑADIR DATOS -->
+<div class="modal fade" id="modalRegistrar" tabindex="-1" aria-labelledby="modalRegistrarLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="modalRegistrarLabel">Añadir Orden de trabajo</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        <form action="{{route('crudOT.create')}}" method="POST">
+          @csrf
+          <!-- Modal AÑADIR id ORDEN DE TRABAJO -->
+          <div class="mb-3">
+            <label for="txtOT" class="form-label">ID ordenTrabajo</label>
+            <input type="text" class="form-control" id="txtOT" aria-describedby="emailHelp" name="txtOT">
+          </div>
+          <!-- Modal AÑADIR Valor total-->
+          <div class="mb-3">
+            <label for="txtvalor" class="form-label">Valor total</label>
+            <input type="text" class="form-control" id="txtvalor" aria-describedby="emailHelp" name="txtvalor">
+          </div>
+         <!-- Modal AÑADIR Fecha entrada-->
+          <div class="mb-3">
+            <label for="txtfecha" class="form-label">Fecha entrada</label>
+            <input type="date" class="form-control" id="txtfecha" aria-describedby="emailHelp" name="txtfecha">
+          </div>
+         <!-- Modal AÑADIR cantidad -->
+          <div class="mb-3">
+            <label for="txtcantidad" class="form-label">Cantidad</label>
+            <input type="text" class="form-control" id="txtcantidad" aria-describedby="emailHelp" name="txtcantidad">
+          </div>
+         <!-- Modal AÑADIR estadoProducto-->
+          <div class="mb-3">
+            <label for="txttipo" class="form-label">Tipo Producto</label>
+            <input type="text" class="form-control" id="txttipo" aria-describedby="emailHelp" name="txttipo">
+          </div>
+
+  
+  
+         <!-- BOTONES MODAL AÑADIR-->
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-primary">Registrar</button>
+      </div>
+        </form>
+      </div>
+  
+    </div>
+  </div>
+  </div>
+  
+  
+      <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID ordenTrabajo</th>
+        <th scope="col">Valor total </th>
+        <th scope="col">Fecha entrada</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Tipo Producto</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+  
+  
+  
+  
+      @foreach($datos as $item)
+      <tr>
+        <th>{{$item ->id_Orden_trabajos}}</th>
+        <td>{{$item ->valor_total}}</td>
+        <td>{{$item ->fecha_de_entrada}}</td>
+        <td>{{$item ->cantidad}}</td>
+        <td>{{$item ->tipo_producto}}</td>
+        <td>
+ <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditar{{$item ->id_Orden_trabajos}}">Editar</button>
+ <button data-bs-href="{{ route('crudOT.delete', $item->id_Orden_trabajos) }}" onclick="return res();" type="button" class="btn btn-danger">Eliminar</button>
+
+
+     </td>
+       </tr>
+         @endforeach
+          </tbody>
+           </table>
     </div>
 
-    <div class="tabla2">
-    <table>
-        <p>Datos Cliente</p>      
-        <tr>
-        <th>Nombres</th>
-        <th>Apellidos</th>
-        <th>Documento</th>
-        <th>Telefono</th>
-        <th>Dirección</th>
-        </tr>
-    
-        <tr>
-            <td>Santiago Julian</td>
-            <td>Millan</td>
-            <td>100846477</td>
-            <td>1175539183</td>
-            <td>Calle 44 Sur #72C</td>
-        </tr>
-    
-    </table>
+    @foreach ($datos as $item)
+    <div class="modal fade" id="modalEditar{{$item->id_Orden_trabajos}}" tabindex="-1" aria-labelledby="modalEditarLabel{{$item->id_Orden_trabajos}}" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalEditarLabel{{$item->id_Orden_trabajos}}">Modificar</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" action="{{ route('crudOT.update') }}">
+                                 @csrf
+
+                        <div class="mb-3">
+                            <label for="txtOT" class="form-label">id de la Orden de trabajo</label>
+                            <input type="text" class="form-control" id="txtOT" aria-describedby="emailHelp" name="txtOT" value="{{$item->id_Orden_trabajos}}" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtvalor" class="form-label">Valor de la Orden de trabajo</label>
+                            <input type="text" class="form-control" id="txtvalor" aria-describedby="emailHelp" name="txtvalor" value="{{$item->valor_total}}">
+                        </div>
+                        <div class="mb-3">
+                             <label for="txtfecha" class="form-label">Fecha entrada</label>
+                             <input type="date" class="form-control" id="txtfecha" aria-describedby="emailHelp" name="txtfecha" value="{{$item->fecha_de_entrada}}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtcantidad" class="form-label">Cantidad Orden de trabajo</label>
+                            <input type="text" class="form-control" id="txtcantidad" aria-describedby="emailHelp" name="txtcantidad" value="{{$item->cantidad}}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="txttipo" class="form-label">Tipo Producto</label>
+                            <input type="text" class="form-control" id="txttipo" aria-describedby="emailHelp" name="txttipo" value="{{$item->tipo_producto}}">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Modificar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
+    @endforeach
+</div>
 
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
 </body>
 </html>

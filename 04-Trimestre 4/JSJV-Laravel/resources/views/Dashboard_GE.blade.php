@@ -105,180 +105,157 @@
 
     <div class="barra de navegacion">
     </div>
+    <!-- Menu -->
+<ul class="list-unstyled text-end" style="position: fixed; bottom: 0; left: 0; right: 0;">
+  <li class="mb-2">
+    <a href="{{route('inventarios.pdf')}}" class="btn btn-danger btn-block"> PDF </a>
+  </li>
+  <li class="mb-2">
+    <a href="{{route('inventarios.pdf')}}" class="btn btn-success btn-block">Excel</a>
+  </li>
+</ul>
+<div class="container mt-5">
 
-        <!--Formulario-->
-        <h1>Registro del Empleado</h1>
-        <div class="cont2">
+<h1 class="text-center p-5">Sueldos </h1>
 
-               <form id="formulario" class="form" action=" {{ url('/Dashboard') }}">
-                   <div class="form_control" action="">
-                   <fieldset >
-                       <legend>Documento Empleado</legend>
-                       <select class="placeholder" name="Tipo ID" required>
-                           <option value="Tipo id" >Seleccione Tipo Identficacion</option>
-                           <option value="Tipo id">TI-Tarjeta Identidad</option>
-                           <option value="Tipo id">CC-Cedula de Ciudadania</option>
-                           <option value="Tipo id">CE-Cedula de Extrangeria</option>
-                           <option value="Tipo id">PA-Pasaporte</option>
-                           <option value="Tipo id">PPT- Permiso por proteccion temporal</option>
-                           <option value="Tipo id">PEP- Permiso especial de permanencia</option>
-                       </select>
-                       <input type="number" placeholder="Numero identificacion" maxlength="10" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
-                   </fieldset>
-               </div>
+@if(session("correcto"))
+<div class="alert alert-success">{{session("correcto")}}</div>
+@endif
 
-               <div class="form_control" action="">
-                   <fieldset >
-                       <legend>Nombres Empleado</legend>
-                       <input class="placeholder" type="text" placeholder=" Primer nombre "pattern="^[A-Za-z]+$" maxlength="15" required>
-                       <input class="placeholder" type="text" placeholder="Segundo nombre "pattern="^[A-Za-z]+$" maxlength="15" required>
-                       <input class="placeholder" type="text" placeholder=" Primer apellido"pattern="^[A-Za-z]+$" maxlength="15" required>
-                       <input class="placeholder" type="text" placeholder="Segundo apellido"pattern="^[A-Za-z]+$" maxlength="15" required>
-                   </fieldset>
-               </div>
+@if(session("incorrecto"))
+<div class="alert alert-danger">{{session("incorrecto")}}</div>
+@endif
 
-               <div class="form_control" action="">
-                   <fieldset>
-                       <Legend> Direccion </Legend>
-                       <select class="placeholder" name="Direccion">
-                           <option value="Tipo">...</option>
-                           <option value="Calle">Calle</option>
-                           <option value="Carrera">Carrera</option>
-                           <option value="Diagonal">Diagonal</option>
-                           <option value="Transversal">Transversal</option>
-                           <option value="Autopista">Autopista</option>
-                           <option value="Avenida">Avenida</option>
-                       </select>
-                       <input class="placeholder" type="text" placeholder="Via principal" required>
-                       <input class="placeholder" type="text" placeholder="Complemento"required >
-                       <label for="">-</label>
-                       <input type="placeholder"  type="number" placeholder="Numero" required maxlength="10">
-                       <input class="placeholder" type="text" placeholder="Barrio" required>
-                       <input class="placeholder" type="text" placeholder="Localidad" required>
-                   </fieldset>
-               </div>
+<script>
+var res = function() {
+    var button = event.target;
+    var href = button.getAttribute('data-bs-href');
+    var not = confirm("¿Estás seguro de eliminar este pago?");
+    if (not) {
+        window.location.href = href;
+    }
+    return false;
+};
+</script>
 
-               <div class="form_control" action="">
-                   <fieldset>
-                       <legend> Datos de Contacto </legend>
-                       <input type="number" placeholder="Telefono" maxlength="7" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
-                       <input type="number" placeholder="Celular" maxlength="10" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
-                       <input class="placeholder" type="email" placeholder=" Correo electronico" name="correo" id="correo" required>
-                   </fieldset>
-               </div>
 
-               <div class="form_control" action="">
-                   <fieldset>
-                       <legend> Datos adicionales</legend>
-                       <label > Fecha de nacimiento </label>
-                       <input class="placeholder" type="date" >
-                       <label> RH </label>
-                       <select class="placeholder" name="RH">
-                           <option value="RH">...</option>
-                           <option value="RH">O</option>
-                           <option value="RH">A</option>
-                           <option value="RH">B</option>
-                           <option value="RH">AB</option>
-                       </select>
-                       <select class="placeholder" name="Rh">
-                           <option value="Rh">...</option>
-                           <option value="Rh">+</option>
-                           <option value="Rh">-</option>
-                       </select>
-                       <label> Genero </label>
-                       <select class="placeholder" name="Genero">
-                           <option value="Genero">...</option>
-                           <option value="Genero">Masculino</option>
-                           <option value="Genero">Femenino</option>
-                           <option value="Genero">No binario</option>
-                       </select>
-                       <label> Estado Civil</label>
-                           <select class="placeholder" name="Estado Civil">
-                               <option value="Estado civil">...</option>
-                               <option value="Estado civil"> Soltero/a </option>
-                               <option value="Estado Civil"> Casado/a </option>
-                               <option value="Estado Civil">Union libre</option>
-                               <option value="Estado Civil">Separado/a</option>
-                             <option value="Estado Civil">Viudo/a</option>
-                           </select>
-                       </fieldset>
-                   </div>
+<div class="p-5 table-responsive">
+    <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalRegistrar">Sueldo</button>
 
-                   <input class="btn" type="submit" value="Enviar">
-                   <input class="btn2" type="reset" value="Limpiar">
-               </form>
-
-                <!--<input class="btn" type="submit" value="Enviar">
-                <input class="btn2" type="reset" value="Limpiar"-->
-
-           </div>
-
-    <div class="cuadro2">
-
-    <!--Tablas-->
-    <div class="tabla1">
-        <p>Empleados</p>
-    <table>
-
-        <tr>
-        <th>Nombre Empleado</th>
-        <th>Numero telefono</th>
-        <th>Numero Id</th>
-        </tr>
-
-        <tr>
-            <td>Santiago Millan</td>
-            <td>3212199775</td>
-            <td>1000365288</td>
-        </tr>
-
-        <tr>
-            <td>Jaider Aponte</td>
-            <td>321689298</td>
-            <td>1000294831</td>
-        </tr>
-
-        <tr>
-            <td>Santiago Godoy</td>
-            <td>3019760954</td>
-            <td>1001456231</td>
-        </tr>
-
-        <tr>
-            <td>Valentina Sanchez</td>
-            <td>341523132</td>
-            <td>1000765342</td>
-        </tr>
-
-        <tr class>
-            <td colspan="2">TOTAL Empleados Registrados</td>
-            <td>3</td>
-        </tr>
-
-    </table>
+    <!-- Registro de Actividad -->
+    <div class="modal fade" id="modalRegistrar" tabindex="-1" aria-labelledby="modalRegistrarLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalRegistrarLabel">Registrar pago</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" action="{{ route('CRUDsueldo.create') }}">
+                        @csrf
+                        <div class="mb-3">
+                            <label for="txtCodigo" class="form-label">Codigo del pago</label>
+                            <input type="text" class="form-control" id="txtCodigo" name="txtCodigo">
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtdetallePago" class="form-label">Detalle del pago</label>
+                            <input type="text" class="form-control" id="txtdetallePago" name="txtdetallePago">
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtdescripcionCuenta" class="form-label">Descripción Cuenta</label>
+                            <input type="text" class="form-control" id="txtdescripcionCuenta" name="txtdescripcionCuenta">
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtnumeroCuenta" class="form-label">No. Cuenta</label>
+                            <input type="text" class="form-control" id="txtnumeroCuenta" name="txtnumeroCuenta">
+                        </div>
+                        <div class="mb-3">
+                            <label for="txttotalPago" class="form-label">Total Pago</label>
+                            <input type="text" class="form-control" id="txttotalPago" name="txttotalPago">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Registrar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!--div class="tabla2">
-    <table>
-        <p>Datos Cliente</p>
-        <tr>
-        <th>Nombres</th>
-        <th>Apellidos</th>
-        <th>Documento</th>
-        <th>Telefono</th>
-        <th>Dirección</th>
-        </tr>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Id Pago</th>
+                                        <th scope="col">Detalle pago</th>
+                                        <th scope="col">Descripcion Cuenta</th>
+                                        <th scope="col">No. Cuenta</th>
+                                        <th scope="col">Total Pago</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody class="table-group-divider">
+                                    @foreach ($datos as $item)
+                                    <tr>
+                                        <th>{{ $item->id_Sueldo}}</th>
+                                        <td>{{ $item->detallePago }}</td>
+                                        <td>{{ $item->descripcionCuenta }}</td>
+                                        <td>{{ $item->numeroCuenta }}</td>
+                                        <td>{{ $item->totalPago }}</td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditar{{$item->id_Sueldo}}">Modificar</button>
+                                            <button data-bs-href="{{ route('CRUDsueldo.delete', $item->id_Sueldo) }}" onclick="return res()" type="button" class="btn btn-danger">Eliminar</button>
 
-        <tr>
-            <td>Santiago Julian</td>
-            <td>Millan</td>
-            <td>100846477</td>
-            <td>1175539183</td>
-            <td>Calle 44 Sur #72C</td>
-        </tr>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+</div>
 
-    </table>
-    </div-->
+@foreach ($datos as $item)
+<div class="modal fade" id="modalEditar{{$item->id_Sueldo}}" tabindex="-1" aria-labelledby="modalEditarLabel{{$item->id_Sueldo}}" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modalEditarLabel{{$item->id_Sueldo}}">Modificar</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <form method="POST" action="{{ route('CRUDsueldo.update', ['id_Sueldo' => $item->id_Sueldo]) }}">
+
+                             @csrf
+
+                    <div class="mb-3">
+                        <label for="txtCodigo" class="form-label">Codigo del Pago</label>
+                        <input type="text" class="form-control" id="txtCodigo" aria-describedby="emailHelp" name="txtCodigo" value="{{$item->id_Sueldo}}" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="txtdetallePago" class="form-label">Detalle del Pago</label>
+                        <input type="text" class="form-control" id="txtdetallePago" aria-describedby="emailHelp" name="txtdetallePago" value="{{$item->detallePago}}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="txtdescripcionCuenta" class="form-label">Descripción de la cuenta</label>
+                        <input type="text" class="form-control" id="txtdescripcionCuenta" aria-describedby="emailHelp" name="txtdescripcionCuenta" value="{{$item->descripcionCuenta}}">
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="txtnumeroCuenta" class="form-label">No. Cuenta</label>
+                        <input type="text" class="form-control" id="txtnumeroCuenta" aria-describedby="emailHelp" name="txtnumeroCuenta" value="{{$item->numeroCuenta}}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="txttotalPago" class="form-label">Total Pago</label>
+                        <input type="text" class="form-control" id="txttotalPago" aria-describedby="emailHelp" name="txttotalPago" value="{{$item->totalPago}}">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Modificar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@endforeach
+</div>
 
     </div>
 

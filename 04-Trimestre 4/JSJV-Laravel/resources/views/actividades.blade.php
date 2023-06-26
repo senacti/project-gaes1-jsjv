@@ -2,42 +2,121 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actividades</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <title>CRUDactividades</title>
+    <!-- BOX ICONS -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!--  CSS -->
+    <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--  JS -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
     
 </head>
 <body>
-     <!-- Menu -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Novedad Actividad</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="{{route('actividades.pdf')}}">PDF</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{route('actividades.pdf')}}">Excel</a>
-              </li>
-            </ul>
+<header class="menu">
+        <div class="cuadrolog">
+            <a href=" {{ url('/Dashboard') }}"><img class="logo" src="{{ asset('img/Lavamatic La Italiana logo.jpeg') }}" alt="logo"></a>
+            </div>
+
+            <nav>
+                <a href=""></a>
+
+            </nav>
+
+
+           </div>
+           <div class="menuadmin">
+            <button>Santiago Godoy</button>
+            <img class="fotoad" src="{{ asset('img/Administrador.jpg') }}" alt="fotoad">
+            <div class="menuadminl">
+            <a href="#">Informacion de empleados</a>
+            <a href="#">Informacion personal</a>
+            <a href=" {{ url('/Index') }}">Cerrar sesion</a>
+            </div>
           </div>
+    </header>
+
+
+    <div class="menu-dashboard">
+        <!-- TOP MENU -->
+        <div class="top-menu">
+
+            <div class="toggle">
+                <i class='bx bx-menu'></i>
+            </div>
         </div>
-      </nav>
- <!-- termina el menu -->
-      <div class="container mt-5">
-    <h1 class="text-center p-5">Listado de Actividades</h1>
+        <!-- INPUT SEARCH -->
+        <div class="input-search">
+            <i class='bx bx-search'></i>
+            <input type="text" class="input" placeholder="Buscar">
+        </div>
+         <!-- MENU -->
+         <div class="menu">
+            <div class="enlace">
+                <i class="bx bx-grid-alt"></i>
+                <span ><a href=" {{ route('crudOT.Index') }}">Orden de trabajo</a></span>
 
-    @if(session("correcto"))
-    <div class="alert alert-success">{{session("correcto")}}</div>
-    @endif
+            </div>
 
-    @if(session("incorrecto"))
-    <div class="alert alert-danger">{{session("incorrecto")}}</div>
-    @endif
+            <div class="enlace" >
+                <i class="bx bx-user"></a></i>
+                <span ><a href="{{ route('CRUDsueldo.Index') }}">Sueldos</a></span>
+                
+            </div>
+
+            <div class="enlace" >
+                <i class="bx bx-grid-alt" ></i>
+                <span ><a href="{{ route('Crud_actividades.Index') }}">Actividades</a></span>
+
+            </div>
+
+            <div class="enlace">
+                <i class="bx bx-message-square"></i>
+                <span ><a href=" {{ url ('/Error404') }}">Mensajes</a></span>
+            </div>
+
+            <div class="enlace">
+                <i class="bx bx-file-blank"></i>
+                <span ><a href=" {{ url('/Error500') }}">Novedades</a></span>
+                
+            </div>
+
+            <div class="enlace">
+                <i class="bx bx-cart"></i>
+                <span ><a href=" {{ route('crud.Index') }}">Inventarios</a></span>
+            </div>
+
+            <!--div class="enlace">
+                <i class="bx bx-heart"></i>
+                <span>Favoritos</span>
+            </div-->
+
+            <div class="enlace">
+                <i class="bx bx-cog"></i>
+                <span ><a href=" {{ url ('/Error404') }}">Configuracion</a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="barra de navegacion">
+    </div>
+    <!-- Menu -->
+<ul class="list-unstyled text-end" style="position: fixed; bottom: 0; left: 0; right: 0;">
+  <li class="mb-2">
+    <a href="{{route('actividades.pdf')}}" class="btn btn-danger btn-block">PDF</a>
+  </li>
+  <li class="mb-2">
+    <a href="{{route('actividades.pdf')}}" class="btn btn-success btn-block">Excel</a>
+  </li>
+</ul>
+<div class="container mt-5">
+<h1 class="text-center p-5">Listado de Actividades</h1>
+
+    
 
     <script>
     var res = function() {
@@ -53,6 +132,13 @@
 
 
     <div class="p-5 table-responsive">
+    @if(session("correcto"))
+    <div class="alert alert-success">{{session("correcto")}}</div>
+    @endif
+
+    @if(session("incorrecto"))
+    <div class="alert alert-danger">{{session("incorrecto")}}</div>
+    @endif
         <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalRegistrar">Añadir Actividad</button>
 
         <!-- Registro de Actividad -->
@@ -156,6 +242,9 @@
         </div>
     </div>
     @endforeach
+</div>
+
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
