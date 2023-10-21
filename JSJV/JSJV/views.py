@@ -49,3 +49,18 @@ def servicios(request):
     return render(request, 'servicios.html',{
                   
     })
+
+def crudInventario(request):
+    return render(request, 'crudInventario.html',{
+                  
+    })
+
+def crudOT(request):
+    return render(request, 'crudOT.html',{
+                  
+    })
+
+def crudPago(request):
+    return render(request, 'crudPago.html',{
+                  
+    })

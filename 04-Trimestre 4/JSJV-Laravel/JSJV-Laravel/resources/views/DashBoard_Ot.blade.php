@@ -114,7 +114,7 @@
   </li>
 </ul>
 <div class="container mt-5">
-<h1 class="text-center p-5">Listado de Actividades</h1>
+<h1 class="text-center p-5">Ordenes de Trabajo</h1>
 
     
 

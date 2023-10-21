@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cliente No Registrado</title>
+
+    <script src="{% static 'images/iconos/buscar.png' %}"></script>
+
+    <link rel="stylesheet" href="{% static 'css/estilo_CatalogoServicios.css' %}">
+    <!-- Agrega la referencia al archivo CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body>
+
+  <!--Barra-->
+  <header class="menu">
+
+      <div class="cuadrolog">
+      <a href="{% url 'index' %}"><img class="logo" src="{% static 'images/Lavamatic La Italiana logo.jpeg' %}" alt="logo"></a>
+      </div>
+
+      <div class="buscar">
+          <input type="text" placeholder="Buscar" required>
+          <div class="btn">
+             <img class="iccon" src="{% static 'images/iconos/buscar.png' %}" alt="">
+          </div>
+      </div>
+
+    <ul class="barra">
+
+      <!--Pedidos-->
+      <!--div class="Peid">
+      <img src="icon/Serivicios.png" alt="Pedidos">
+      <li><a href="#">Pedidos</a></li>
+      </div-->
+
+
+
+    </ul>
+
+      <!--Administrador-->
+      <div class="admin">
+      <img class="UsIcon" src="{% static 'images/user.svg' %}" alt="UsuarioIcono">
+
+
+      <h2><a href="{% url 'login' %}" class="Admin">Iniciar sesion</h2></a>
+      </div>
+
+      <!--Configuraciones-->
+      <!--div class="Confi">
+      <img src="icon/configuracion.png" alt="Ajustes">
+      <li><a href="#">Configuraciones</a></li>
+      </div-->
+
+  </header>
+
+ <h1 class="Titulo">Elije un Servicio</h1>
+
+  <!--Vista del catalogo de Servicios-->
+  <div class="Catalogo">
+
+    <div class="servicio1">
+
+      <a href="{% url 'actividad' %}">Actividades</a>
+      <img src="{% static 'images/Muebles.jpg' %}" alt="Muebles">
+
+    </div>
+
+    <div class="servicio2">
+
+      <a href="{% url 'crudInventario' %}">Inventario</a>
+      <img src="{% static 'images/Lavadoras.jpg' %}" alt="Lavanderia">
+
+    </div>
+
+    <div class="servicio3">
+
+      <a href="{% url 'crudPago' %}">Pagos</a>
+      <img src="{% static 'images/Planchado.jpg' %}" alt="Secado">
+
+    </div>
+
+    <div class="servicio4">
+
+      <a href="{% url 'crudOT' %}">OT</a>
+      <img src="{% static 'images/Tintoreria.jpg' %}" alt="Tintoreria">
+
+    </div>
+
+    <div class="servicio5">
+
+      <a href="{% url 'servicios' %}">Servicios</a>
+      <img src="{% static 'images/Zapatos.jpg' %}" alt="Calzado">
+
+
+    </div>
+
+    <div class="servicio6">
+
+      <a href="{% url 'actividad' %}">Tapetes</a>
+      <img src="{% static 'images/Tapete.jpg' %}" alt="Tapetes">
+
+    </div>
+
+  </div>
+
+
+</body>
+</html>

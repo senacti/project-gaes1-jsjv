@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ asset('css/estilo.css') }}">
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
     <title>Restablecer contraseña</title>
 
 </head>
@@ -21,12 +22,12 @@
 
      <div class="signupFrm">
 
-      <a href=" {{ url('/Registro') }}" class="imgregistro">
-        <img src="{{ asset('img/LOGO MORADO LAVAMATIC.png') }}" alt="">
+      <a href="{% url 'login' %}" class="imgregistro">
+        <img src="{% static 'images/LOGO MORADO LAVAMATIC.png' %}" alt="">
       </a>
       
 
-        <form action=" {{ url ('/Registro') }}" class="form" id="formulario">
+        <form action="" class="form" id="formulario">
           <h1 class="title">Restablecer Contraseña</h1>
 
     
@@ -48,5 +49,5 @@
         </form>
       </div>
 </body>
-<script src="{{ asset('js/Restablecer_Contra.js') }}"></script>
+<script src=""></script>
 </html>
