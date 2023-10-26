@@ -58,59 +58,24 @@
             <input type="text" class="input" placeholder="Buscar">
         </div>
          <!-- MENU -->
-         <div class="menu">
-            <div class="enlace">
-                <i class="bx bx-grid-alt"></i>
-                <!-- link para al crud de ordenes de trabajo -->
-                <span ><a href="#">Orden de trabajo</a></span>
-
-            </div>
-
-            <div class="enlace" >
-                <i class="bx bx-user"></a></i>
-                <!-- link para al crud de sueldos -->
-                <span ><a href="#">Sueldos</a></span>
-                
-            </div>
-
-            <div class="enlace" >
-                <i class="bx bx-grid-alt" ></i>
-                <!-- link para al crud de actividades -->
-                <span ><a href="#">Actividades</a></span>
-
-            </div>
-
-            <div class="enlace">
-                <i class="bx bx-message-square"></i>
-                <!-- link para el error 404 -->
-                <span ><a href="#">Mensajes</a></span>
-            </div>
-
-            <div class="enlace">
-                <i class="bx bx-file-blank"></i>
-                <!-- link para el error 500-->
-                <span ><a href="#">Novedades</a></span>
-                
-            </div>
-
-            <div class="enlace">
-                <i class="bx bx-cart"></i>
-                <!-- link para al crud principal -->
-                <span ><a href="#">Inventarios</a></span>
-            </div>
-
-            <!--div class="enlace">
-                <i class="bx bx-heart"></i>
-                <span>Favoritos</span>
-            </div-->
-
-            <div class="enlace">
-                <i class="bx bx-cog"></i>
-                <!-- link para el error 404 -->
-                <span ><a href="#">Configuracion</a></span>
-            </div>
-        </div>
-    </div>
+         <div class="menu"style="color: white; ">
+          <div class="enlace">
+              <i class="bx bx-grid-alt"> <h5><a href="{% url 'crudOT' %}">Orden de trabajo</a></h5> </i>
+          </div>
+  
+          <div class="enlace">
+              <i class="bx bx-user"> <h5><a href="{% url 'crudPago' %}">Sueldos</a></h5> </i>
+          </div>
+  
+          <div class="enlace">
+              <i class="bx bx-grid-alt"> <h5><a href="{% url 'actividad' %}">Actividades</a></h5> </i>
+          </div>
+  
+          <div class="enlace">
+              <i class="bx bx-cart"> <h5><a href="{% url 'crudInventario' %}">Inventario</a></h5> </i>
+          </div>
+      </div>
+  </div>
     
     <div class="barra de navegacion">
     </div>

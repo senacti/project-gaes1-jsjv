@@ -14,7 +14,24 @@
 </head>
 
 <body>
-    
+    <div class="menu"style="color: white; ">
+        <div class="enlace">
+            <i class="bx bx-grid-alt"> <h5><a href="{% url 'crudOT' %}">Orden de trabajo</a></h5> </i>
+        </div>
+
+        <div class="enlace">
+            <i class="bx bx-user"> <h5><a href="{% url 'crudPago' %}">Sueldos</a></h5> </i>
+        </div>
+
+        <div class="enlace">
+            <i class="bx bx-grid-alt"> <h5><a href="{% url 'actividad' %}">Actividades</a></h5> </i>
+        </div>
+
+        <div class="enlace">
+            <i class="bx bx-cart"> <h5><a href="{% url 'crudInventario' %}">Inventario</a></h5> </i>
+        </div>
+    </div>
+</div>
     <!--Titulo-->
     <h1 class="Titulo">Finalizar Compra</h1>
 
