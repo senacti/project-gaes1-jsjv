@@ -29,9 +29,10 @@
     <a href="{% url 'index' %}" class="imgregistro">
       <img src="{% static 'images/LOGO MORADO LAVAMATIC.png' %}" alt="">
     </a>
-    
 
-      <form action="" id="formulario" class="form">
+
+      <form action="" id="formulario" class="form" method="post">
+        {% csrf_token %}
         <h1 class="title">Inicio de sesion</h1>
   
         <div class="inputContainer">
@@ -40,12 +41,12 @@
         </div>
   
         <div class="inputContainer">
-          <input type="text" class="input"name="usuario" id="usuario" placeholder="a" required>
+          <input type="text" class="input"name="username" id="usuario" placeholder="a" required>
           <label for="" class="label">Usuario</label>
         </div>
   
         <div class="inputContainer">
-          <input type="password" class="input"name="contraseña" id="contraseña" placeholder="a" required>
+          <input type="password" class="input"name="password" id="contraseña" placeholder="a" required>
           <label for="" class="label">Contraseña</label>
         </div>
   

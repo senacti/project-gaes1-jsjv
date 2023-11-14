@@ -1,4 +1,16 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
+from django.contrib.auth import login
+from django.contrib.auth import logout
+from django.contrib.auth import authenticate
+from django.contrib import messages
+
+#Importar el form de la creacion de Usuarios 
+from .forms import CustomUserCreationForm
+from django.contrib.auth import authenticate, login
+
+#Nesesario paara que sea obligatorio el registrarse 
+from django.contrib.auth.decorators import login_required
 
 def index(request):
     return render(request, 'index.html',{
@@ -21,9 +33,23 @@ def catalogoServicios(request):
     })
 
 def login(request):
-    return render(request, 'login.html',{
-                  
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(username=username, password=password)
+        if user:
+            login(request, user)
+            messages.success(request, 'Bienvenido {}'.format(user.username))
+            return redirect('index')
+        else: 
+            messages.error(request, 'Usuario o contraseña incorrectos')
+    return render(request, 'registration/login.html',{
+        
     })
+
+def exit_view(request):
+    logout(request)
+    return redirect('index')
 
 def quienes(request):
     return render(request, 'quienes.html',{
@@ -35,10 +61,25 @@ def recordarContra(request):
                   
     })
 
+#Creación de usuarios 
 def registros(request):
-    return render(request, 'registros.html',{
+    data = {
+        'form':CustomUserCreationForm()
+    }
+
+    if request.method == 'POST':
+        user_creation_form = CustomUserCreationForm (data=request.POST)
+
+        if user_creation_form.is_valid():
+            user_creation_form.save()
+
+            user= authenticate (username= user_creation_form.cleaned_data['username'], password= user_creation_form.cleaned_data['password1'])
+            login(request, user)
+            return redirect('index')
+
+    return render(request, 'registration/registros.html',data)
                   
-    })
+    
 
 def roles(request):
     return render(request, 'roles.html',{
@@ -50,6 +91,7 @@ def servicios(request):
                   
     })
 
+@login_required
 def crudInventario(request):
     return render(request, 'crudInventario.html',{
                   

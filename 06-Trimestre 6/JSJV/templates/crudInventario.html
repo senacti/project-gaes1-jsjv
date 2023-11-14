@@ -33,12 +33,12 @@
         
            </div>
            <div class="menuadmin">
-            <button>Santiago Godoy</button>
+            <button>{{user.username | upper }}</button>
             <img class="fotoad" src="{% static 'images/Administrador.jpg' %}" alt="fotoad">
             <div class="menuadminl">
             <a href="#">Informacion de empleados</a>
             <a href="#">Informacion personal</a>
-            <a href="{% url 'index' %}">Cerrar sesion</a>
+            <a href="{% url 'exit' %}">Cerrar sesión</a>
             </div>
           </div>             
     </header>
