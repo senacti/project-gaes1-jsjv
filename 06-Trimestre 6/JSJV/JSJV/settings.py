@@ -43,6 +43,15 @@ INSTALLED_APPS = [
     'inventario',
     'actividades',
 ]
+#jazzmin bibliotecas
+JAZZMIN_SETTINGS = {
+  "welcome_sign":"Bienvenidos al panel de administrador",
+  
+}
+JAZZMIN_UI_TWEAKS = {
+  "theme":"pulse",
+ 
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
