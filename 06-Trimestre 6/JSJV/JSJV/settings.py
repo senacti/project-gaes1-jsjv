@@ -48,6 +48,7 @@ JAZZMIN_SETTINGS = {
   "welcome_sign":"Bienvenidos al panel de administrador",
   
 }
+JAZZMIN_SETTINGS["show_ui_builder"] = True
 JAZZMIN_UI_TWEAKS = {
   "theme":"pulse",
  
