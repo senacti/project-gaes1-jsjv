@@ -27,36 +27,42 @@
       </a>
 
 
-        <form action="" class="form" id="formulario">
+        <form  class="form" id="formulario" method="post">
+          {% csrf_token %}
           <h1 class="title">Formulario de Registro</h1>
           <div class="inputContainer">
-            <input type="text" class="input" name="first_name" id="nombre" pattern="^[A-Za-z]+$" maxlength="35" placeholder="a" required>
-            <label for="" class="label"> Nombre </label>
+            <input type="text" class="input" name="username" id="nombre" maxlength="35" placeholder="a" required>
+            <label for="{{ form.username.id_for_label }}" class="label"> Nombre </label>
           </div>
-          <div class="inputContainer">
+
+          <!--<div class="inputContainer">
             <input type="number" class="input" name="Telefono" id="Telefono" placeholder="a" name="phone" required >
             <label for="" class="label"> Telefono</label>
-          </div>
+          </div>-->
 
           <div class="inputContainer">
-            <input type="email" class="input" name="correo" id="correo" placeholder="a" name="email" required>
-            <label for="" class="label">Correo</label>
+            <input type="email" class="input" name="email" id="email" placeholder="a" name="email" required>
+            <label for="{{ form.email.id_for_label }}" class="label">Correo</label>
           </div>
 
-          <div class="inputContainer">
+          <!--<div class="inputContainer">
             <input type="text" class="input" placeholder="a" name="username" required>
             <label for="" class="label">Usuario</label>
-          </div>
+          </div>-->
 
           <div class="inputContainer">
             <input type="password" class="input" placeholder="a"name="password1" required>
-            <label for="" class="label">Contraseña</label>
+            <label for="{{ form.password1.id_for_label }}" class="label">Contraseña</label>
+          </div>
+          <div class="inputContainer">
+            <input type="password" class="input" placeholder="a"name="password2" required>
+            <label for="{{ form.password2.id_for_label }}" class="label">Confirmar Contraseña</label>
           </div>
 
-          <div class="inputContainer">
+          <!--<div class="inputContainer">
             <input type="password" class="input" placeholder="a" name="pasword2" required>
             <label for="" class="label">Confirmar Contraseña</label>
-          </div>
+          </div>-->
 
 
           <button type="submit" class="submitBtn" value="Continuar">

@@ -8,6 +8,7 @@ from django.contrib import messages
 #Importar el form de la creacion de Usuarios 
 from .forms import CustomUserCreationForm
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.forms import UserCreationForm
 
 #Nesesario paara que sea obligatorio el registrarse 
 from django.contrib.auth.decorators import login_required
@@ -32,7 +33,7 @@ def catalogoServicios(request):
                   
     })
 
-def login(request):
+def login_view(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -41,11 +42,9 @@ def login(request):
             login(request, user)
             messages.success(request, 'Bienvenido {}'.format(user.username))
             return redirect('index')
-        else: 
+        else:
             messages.error(request, 'Usuario o contraseña incorrectos')
-    return render(request, 'registration/login.html',{
-        
-    })
+    return render(request, 'registration/login.html', {})
 
 def exit_view(request):
     logout(request)
@@ -61,25 +60,18 @@ def recordarContra(request):
                   
     })
 
-#Creación de usuarios 
+# Creación de usuarios
 def registros(request):
-    data = {
-        'form':CustomUserCreationForm()
-    }
-
     if request.method == 'POST':
-        user_creation_form = CustomUserCreationForm (data=request.POST)
-
-        if user_creation_form.is_valid():
-            user_creation_form.save()
-
-            user= authenticate (username= user_creation_form.cleaned_data['username'], password= user_creation_form.cleaned_data['password1'])
+        form = CustomUserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
             login(request, user)
+            # Puedes redirigir a la página que desees después del registro
             return redirect('index')
-
-    return render(request, 'registration/registros.html',data)
-                  
-    
+    else:
+        form = CustomUserCreationForm()
+    return render(request, 'registration/registros.html', {'form': form})
 
 def roles(request):
     return render(request, 'roles.html',{

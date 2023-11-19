@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'users',
     'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -42,17 +43,8 @@ INSTALLED_APPS = [
     'core',
     'inventario',
     'actividades',
+    
 ]
-#jazzmin bibliotecas
-JAZZMIN_SETTINGS = {
-  "welcome_sign":"Bienvenidos al panel de administrador",
-  
-}
-JAZZMIN_SETTINGS["show_ui_builder"] = True
-JAZZMIN_UI_TWEAKS = {
-  "theme":"pulse",
- 
-}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
