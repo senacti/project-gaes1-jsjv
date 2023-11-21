@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'core',
     'inventario',
     'actividades',
+     'import_export',
     
 ]
 #jazzmin bibliotecas
