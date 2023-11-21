@@ -17,13 +17,17 @@ class MachineAdmin(admin.ModelAdmin):
 
 
 @admin.register(Inventory)
-class InventoryAdmin(admin.ModelAdmin):
+class InventoryAdmin(ImportExportModelAdmin):
     list_display = ('supplier_name', 'amount','input','machine',)
     list_display_links=('supplier_name',)
     list_editable=('amount',)
     search_fields=('supplier_name',)
     list_filter=('input','machine',)
     list_per_page=2
+class InventoryResource(resources.ModelResource):
+    class Meta:
+        modal=Inventory
+        fields=('supplier_name','amount',)
 #admin.site.register(Machine)
 #admin.site.register(Inventory)
 #admin.site.register(Input)
