@@ -4,13 +4,13 @@ from import_export import resources
 from import_export.admin import ImportExportModelAdmin
 
 @admin.register(Input)
-class InputAdmin(admin.ModelAdmin):
+class InputAdmin(ImportExportModelAdmin):
     list_display = ('product_type',)
     
 
 
 @admin.register(Machine)
-class MachineAdmin(admin.ModelAdmin):
+class MachineAdmin(ImportExportModelAdmin):
    list_display = ('machine_type',)
   
 
@@ -24,10 +24,6 @@ class InventoryAdmin(ImportExportModelAdmin):
     search_fields=('supplier_name',)
     list_filter=('input','machine',)
     list_per_page=2
-class InventoryResource(resources.ModelResource):
-    class Meta:
-        modal=Inventory
-        fields=('supplier_name','amount',)
 #admin.site.register(Machine)
 #admin.site.register(Inventory)
 #admin.site.register(Input)
