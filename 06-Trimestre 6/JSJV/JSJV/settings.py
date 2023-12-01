@@ -56,6 +56,61 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+JAZZMIN_SETTINGS = {
+    "welcome_sign": "BIENVENIDOS AL SISTEMA OPERATIVO",
+    "site_title": "JSJV",
+    "site_logo": "images/LOGO MORADO LAVAMATIC.png" ,
+     "site_logo_classes": "images-circle",
+    "custom_css": "css/home.css",
+    
+   
+      "topmenu_links": [
+
+        {"name": " Home",  "url": "index", "permissions": ["auth.view_user"]},
+
+
+       
+      
+    ],
+
+  "icons": {
+        "auth": "fas fa-users-cog",
+        "auth.user": "fas fa-user",
+        "auth.Inventory": "fas fa-users",
+    },
+}
+JAZZMIN_SETTINGS["show_ui_builder"] = True
+JAZZMIN_UI_TWEAKS = {
+    "navbar_small_text": False,
+    "footer_small_text": False,
+    "body_small_text": True,
+    "brand_small_text": False,
+    "brand_colour": "navbar-purple",
+    "accent": "accent-navy",
+    "navbar": "navbar-purple navbar-dark",
+    "no_navbar_border": True,
+    "navbar_fixed": False,
+    "layout_boxed": False,
+    "footer_fixed": True,
+    "sidebar_fixed": True,
+    "sidebar": "sidebar-light-indigo",
+    "sidebar_nav_small_text": False,
+    "sidebar_disable_expand": True,
+    "sidebar_nav_child_indent": True,
+    "sidebar_nav_compact_style": True,
+    "sidebar_nav_legacy_style": False,
+    "sidebar_nav_flat_style": True,
+    "theme": "pulse",
+    "dark_mode_theme": "",
+    "button_classes": {
+        "primary": "btn-outline-primary",
+        "secondary": "btn-outline-secondary",
+        "info": "btn-info-solid-custom",
+        "warning": "btn-warning",
+        "danger": "btn-danger",
+        "success": "btn-success"
+    }
+}
 
 ROOT_URLCONF = 'JSJV.urls'
 

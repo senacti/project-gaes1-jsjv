@@ -24,7 +24,7 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
-    path('actividad/', views.actividad, name='actividad'),
+    path('admin/', views.actividad, name='actividad'),
     path('admin/', admin.site.urls, name='admin:index'),#Ruta login#
     path('logout/', exit_view, name='exit'),
     path('accounts/', include('django.contrib.auth.urls')),
@@ -35,8 +35,8 @@ urlpatterns = [
     path('registros/', views.registros, name='registros'),
     path('roles/', views.roles, name='roles'),
     path('servicios/', views.servicios, name='servicios'),
-    path('crudInventario/', views.crudInventario, name='crudInventario'),
-    path('crudOT/', views.crudOT, name='crudOT'),
-    path('crudPago/', views.crudPago, name='crudPago'),
+    path('admin/', views.crudInventario, name='crudInventario'),
+    path('admin/', views.crudOT, name='crudOT'),
+    path('admin/', views.crudPago, name='crudPago'),
 
 ]
