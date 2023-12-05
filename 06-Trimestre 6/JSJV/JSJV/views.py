@@ -12,7 +12,38 @@ from django.contrib.auth.forms import UserCreationForm
 
 #Nesesario paara que sea obligatorio el registrarse 
 from django.contrib.auth.decorators import login_required
+#correos
+from django.core.mail import EmailMessage
+from django.template.loader import render_to_string
+from django.conf import settings
 
+
+def quienes(request):
+    if request.method == "POST":
+        name = request.POST['name']
+        email = request.POST['email']
+        subject = request.POST['subject']
+        message = request.POST['message']
+        
+        template = render_to_string('email_template.html', {
+            'name': name,
+            'email': email,
+            'message': message
+        })
+    
+        email = EmailMessage(
+            subject,
+            template,
+            settings.EMAIL_HOST_USER,
+            ['vs157918@gmail.com',]
+        )
+    
+        email.fail_silently = False
+        email.send()
+    
+    return render(request, 'quienes.html',{
+
+    })
 def index(request):
     return render(request, 'index.html',{
                   
