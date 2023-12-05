@@ -56,6 +56,14 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+# Enviar emails
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'vs157918@gmail.com'
+EMAIL_HOST_PASSWORD = 'gntblujumtagekrc ' 
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
 JAZZMIN_SETTINGS = {
     "welcome_sign": "BIENVENIDOS AL SISTEMA OPERATIVO",
     "site_title": "JSJV",
