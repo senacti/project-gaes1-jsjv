@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include 
 from .views import exit_view
 from .views import login_view
+from .views import PDFWiew
 
 from . import views
 
@@ -38,5 +39,6 @@ urlpatterns = [
     path('admin/', views.crudInventario, name='crudInventario'),
     path('admin/', views.crudOT, name='crudOT'),
     path('admin/', views.crudPago, name='crudPago'),
+    path('pdf/', PDFWiew.as_view(), name='sale_pdf'),
 
 ]

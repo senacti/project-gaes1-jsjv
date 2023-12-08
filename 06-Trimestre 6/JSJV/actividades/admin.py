@@ -1,7 +1,9 @@
 from django.contrib import admin
 from .models import Novelty,StateAc,Activity
 from import_export import resources
+from django.urls import reverse
 from import_export.admin import ImportExportModelAdmin
+from django.shortcuts import redirect
 
 #admin.site.register(Novelty)
 #admin.site.register(StateAc)
@@ -27,3 +29,12 @@ class ActivityAdmin(ImportExportModelAdmin):
     search_fields=('dateAc',)
     list_filter=('noveltyAc','stateAc',)
     list_per_page=2
+
+    actions = ['custom_button']
+
+    def custom_button(self, request, queryset):
+
+        url = reverse('sale_pdf')
+        return redirect(url)
+
+    custom_button.short_description = 'Descargar PDF'

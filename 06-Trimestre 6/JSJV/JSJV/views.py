@@ -17,6 +17,14 @@ from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
 from django.conf import settings
 
+#PDF
+import os
+from xhtml2pdf import pisa
+from django.http import HttpResponse
+from django.views.generic import View
+from django.template.loader import get_template
+from django.contrib.staticfiles import finders
+from actividades.models import Activity
 
 def quienes(request):
     if request.method == "POST":
@@ -129,3 +137,28 @@ def crudPago(request):
     return render(request, 'crudPago.html',{
                   
     })
+
+#PDF
+class PDFWiew(View):
+    def get(self, request, *args, **kwargs):
+        try:
+            actividades = Activity.objects.all()  
+
+            template = get_template('pdf.html')
+            context = {
+                'actividades': actividades
+            }
+
+            html = template.render(context)
+            
+            response = HttpResponse(content_type='application/pdf')
+            #response['Content-Disposition'] = 'attachment; filename="reporte de actividades.pdf"'
+            pisa_status = pisa.CreatePDF(html, dest=response)
+         
+            if pisa_status.err:
+                return HttpResponse('We had some errors <pre>' + html + '</pre>')
+            
+            return response
+        except Exception as e:
+            print(f"Error: {e}")
+            return HttpResponse('Error al generar el PDF')
