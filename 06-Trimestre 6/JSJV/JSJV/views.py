@@ -90,7 +90,10 @@ def exit_view(request):
     logout(request)
     return redirect('index')
 
-
+def quienes(request):
+    return render(request, 'quienes.html',{
+                  
+    })
 
 def recordarContra(request):
     return render(request, 'recordarContra.html',{
