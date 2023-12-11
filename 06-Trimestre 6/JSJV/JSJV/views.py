@@ -25,6 +25,7 @@ from django.views.generic import View
 from django.template.loader import get_template
 from django.contrib.staticfiles import finders
 from actividades.models import Activity
+from inventario.models import Inventory
 
 def quienes(request):
     if request.method == "POST":
@@ -138,13 +139,39 @@ def crudPago(request):
                   
     })
 
-#PDF
-class PDFWiew(View):
+#PDF Actividades 
+class PDFacti(View):
+
+    def link_callback(self, uri, rel):
+            result = finders.find(uri)
+            if result:
+                    if not isinstance(result, (list, tuple)):
+                            result = [result]
+                    result = list(os.path.realpath(path) for path in result)
+                    path=result[0]
+            else:
+                    sUrl = settings.STATIC_URL       
+                    sRoot = settings.STATIC_ROOT     
+                    mUrl = settings.MEDIA_URL       
+                    mRoot = settings.MEDIA_ROOT      
+
+                    if uri.startswith(mUrl):
+                            path = os.path.join(mRoot, uri.replace(mUrl, ""))
+                    elif uri.startswith(sUrl):
+                            path = os.path.join(sRoot, uri.replace(sUrl, ""))
+                    else:
+                            return uri
+
+            if not os.path.isfile(path):
+                    raise RuntimeError(
+                            'media URI must start with %s or %s' % (sUrl, mUrl)
+                    )
+            return path
+    
     def get(self, request, *args, **kwargs):
         try:
             actividades = Activity.objects.all()  
-
-            template = get_template('pdf.html')
+            template = get_template('PDFS/pdfActi.html')
             context = {
                 'actividades': actividades
             }
@@ -153,7 +180,65 @@ class PDFWiew(View):
             
             response = HttpResponse(content_type='application/pdf')
             #response['Content-Disposition'] = 'attachment; filename="reporte de actividades.pdf"'
-            pisa_status = pisa.CreatePDF(html, dest=response)
+            pisa_status = pisa.CreatePDF(
+                 html, dest=response,
+                 link_callback=self.link_callback
+                 )
+         
+            if pisa_status.err:
+                return HttpResponse('We had some errors <pre>' + html + '</pre>')
+            
+            return response
+        except Exception as e:
+            print(f"Error: {e}")
+            return HttpResponse('Error al generar el PDF')
+
+
+#PDF Inventario
+class PDFinve(View):
+
+    def link_callback(self, uri, rel):
+            result = finders.find(uri)
+            if result:
+                    if not isinstance(result, (list, tuple)):
+                            result = [result]
+                    result = list(os.path.realpath(path) for path in result)
+                    path=result[0]
+            else:
+                    sUrl = settings.STATIC_URL       
+                    sRoot = settings.STATIC_ROOT     
+                    mUrl = settings.MEDIA_URL       
+                    mRoot = settings.MEDIA_ROOT      
+
+                    if uri.startswith(mUrl):
+                            path = os.path.join(mRoot, uri.replace(mUrl, ""))
+                    elif uri.startswith(sUrl):
+                            path = os.path.join(sRoot, uri.replace(sUrl, ""))
+                    else:
+                            return uri
+
+            if not os.path.isfile(path):
+                    raise RuntimeError(
+                            'media URI must start with %s or %s' % (sUrl, mUrl)
+                    )
+            return path
+    
+    def get(self, request, *args, **kwargs):
+        try:
+            inventarios = Inventory.objects.all()  
+            template = get_template('PDFS/pdfInve.html')
+            context = {
+                'inventarios': inventarios
+            }
+
+            html = template.render(context)
+            
+            response = HttpResponse(content_type='application/pdf')
+            #response['Content-Disposition'] = 'attachment; filename="reporte de actividades.pdf"'
+            pisa_status = pisa.CreatePDF(
+                 html, dest=response,
+                 link_callback=self.link_callback
+                 )
          
             if pisa_status.err:
                 return HttpResponse('We had some errors <pre>' + html + '</pre>')

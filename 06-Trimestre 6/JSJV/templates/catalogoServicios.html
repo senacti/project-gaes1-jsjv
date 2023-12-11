@@ -18,36 +18,19 @@
 
   <!--Barra-->
   <header class="menu">
-
       <div class="cuadrolog">
-      <a href="{% url 'index' %}"><img class="logo" src="{% static 'images/Lavamatic La Italiana logo.jpeg' %}" alt="logo"></a>
+      <a href="{% url 'index' %}"><img class="logo" style="margin-top: 1%;" src="{% static 'images/Lavamatic La Italiana logo.jpeg' %}" alt="logo"></a>
       </div>
-
-      <div class="buscar">
-          <input type="text" placeholder="Buscar" required>
-          <div class="btn">
-             <img class="iccon" src="{% static 'images/iconos/buscar.png' %}" alt="">
-          </div>
-      </div>
-
-    <ul class="barra">
-
-      <!--Pedidos-->
-      <!--div class="Peid">
-      <img src="icon/Serivicios.png" alt="Pedidos">
-      <li><a href="#">Pedidos</a></li>
-      </div-->
-
-
-
-    </ul>
 
       <!--Administrador-->
       <div class="admin">
       <img class="UsIcon" src="{% static 'images/user.svg' %}" alt="UsuarioIcono">
-
-
+      {% if request.user.is_authenticated %}
+      <h2><a class="Admin"  href="{% url 'exit' %}">Cerrar sesion</h2></a>
+      <h2><a class="Admin" style="font-size: 25px;">{{ user.username | upper }} </h2></a>
+      {% else %}
       <h2><a href="{% url 'login' %}" class="Admin">Iniciar sesion</h2></a>
+      {% endif %}
       </div>
 
       <!--Configuraciones-->
@@ -57,22 +40,22 @@
       </div-->
 
   </header>
-
- <h1 class="Titulo">Elije un Servicio</h1>
-
+  {% if request.user.is_authenticated %}
+  <!--Ingressar como Administrador-->
+  <h1 class="Titulo">Elije una Opción</h1>
   <!--Vista del catalogo de Servicios-->
   <div class="Catalogo">
 
     <div class="servicio1">
 
-      <a href="{% url 'actividad' %}">Actividades</a>
+      <a href="{% url 'admin:app_list' app_label='actividades' %}">Actividades</a>
       <img src="{% static 'images/Muebles.jpg' %}" alt="Muebles">
 
     </div>
 
     <div class="servicio2">
 
-      <a href="{% url 'crudInventario' %}">Inventario</a>
+      <a href="{% url 'admin:app_list' app_label='inventario' %}">Inventario</a>
       <img src="{% static 'images/Lavadoras.jpg' %}" alt="Lavanderia">
 
     </div>
@@ -93,7 +76,7 @@
 
     <div class="servicio5">
 
-      <a href="{% url 'servicios' %}">Servicios</a>
+      <a href="{% url 'servicios' %}">Clientes</a>
       <img src="{% static 'images/Zapatos.jpg' %}" alt="Calzado">
 
 
@@ -101,12 +84,63 @@
 
     <div class="servicio6">
 
-      <a href="{% url 'actividad' %}">Tapetes</a>
+      <a href="{% url 'actividad' %}">Confi</a>
       <img src="{% static 'images/Tapete.jpg' %}" alt="Tapetes">
 
     </div>
 
   </div>
+  {% else %}
+  <!--Ingresar Como cliente-->
+  <h1 class="Titulo">Nuestros Servicios</h1>
+  <!--Vista del catalogo de Servicios-->
+  <div class="Catalogo">
+
+    <div class="servicio1">
+
+      <a href="{% url 'crudPago' %}">Muebles</a>
+      <img src="{% static 'images/Muebles.jpg' %}" alt="Muebles">
+
+    </div>
+
+    <div class="servicio2">
+
+      <a href="{% url 'crudPago' %}">Lavanderia</a>
+      <img src="{% static 'images/Lavadoras.jpg' %}" alt="Lavanderia">
+
+    </div>
+
+    <div class="servicio3">
+
+      <a href="{% url 'crudPago' %}">Secado</a>
+      <img src="{% static 'images/Planchado.jpg' %}" alt="Secado">
+
+    </div>
+
+    <div class="servicio4">
+
+      <a href="{% url 'crudPago' %}">Tintoreria</a>
+      <img src="{% static 'images/Tintoreria.jpg' %}" alt="Tintoreria">
+
+    </div>
+
+    <div class="servicio5">
+
+      <a href="{% url 'crudPago' %}">Calzado</a>
+      <img src="{% static 'images/Zapatos.jpg' %}" alt="Calzado">
+
+
+    </div>
+
+    <div class="servicio6">
+
+      <a href="{% url 'crudPago' %}">Tapetes</a>
+      <img src="{% static 'images/Tapete.jpg' %}" alt="Tapetes">
+
+    </div>
+
+  </div>
+  {% endif %}
 
 
 </body>

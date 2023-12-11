@@ -28,13 +28,13 @@ class ActivityAdmin(ImportExportModelAdmin):
     list_editable=('timeAc',)
     search_fields=('dateAc',)
     list_filter=('noveltyAc','stateAc',)
-    list_per_page=2
+    list_per_page=5
 
     actions = ['custom_button']
 
     def custom_button(self, request, queryset):
 
-        url = reverse('sale_pdf')
+        url = reverse('pdfActi')
         return redirect(url)
 
     custom_button.short_description = 'Descargar PDF'
