@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Pdf OT</title>
+    <title>Pdf actividades</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -46,34 +46,32 @@
 
 <body>
     <div class="content">
-        <h1 style="font-size: 20px;">OT de Lavamatic</h1>
+        <h1 style="font-size: 20px;">Lista de Actividades</h1>
 
         <table>
             <thead>
                 <tr style="background-color: rgb(175, 172, 172);">
-                    <th>Nombre</th>
-                    <th>Correo</th>
-                    <th>N° Celular</th>
-                    <th>Fecha</th>
-                    <th>Servicio</th>
-                    <th>Cantidad Producto</th>
-                    <th>Tipo Producto</th>
-                    <th>Método De Pago</th>
-                    <th>Total</th>
+                    <th>Fecha Actividad</th>
+                    <th>Tiempo de desarrollo</th>
+                    <th>Descripción Actividad</th>
+                    <th>Novedad Actividad</th>
+                    <th>Estado</th>
+                    <th>OT</th>
+                    <th>Insumo usado</th>
+                    <th>Cantidad de insumo utilizado</th>
                 </tr>
             </thead>
             <tbody>
-                {% for ot in ordenesTrabajo %}
+                {% for actividad in actividades %}
                 <tr>
-                    <td>{{ ot.nombre_cliente }}</td>
-                    <td>{{ ot.email_cliente }}</td>
-                    <td>{{ ot.numberPhone }}</td>
-                    <td>{{ ot.dateOT }}</td>
-                    <td>{{ ot.typeService }}</td>
-                    <td>{{ ot.productList.amount }}</td>
-                    <td>{{ ot.productList.category }}</td>
-                    <td>{{ ot.paymentMethod }}</td>
-                    <td>{{ ot.totalPrice }}</td>
+                    <td>{{ actividad.dateAc }}</td>
+                    <td>{{ actividad.timeAc }}</td>
+                    <td>{{ actividad.descriptionAc }}</td>
+                    <td>{{ actividad.noveltyAc }}</td>
+                    <td>{{ actividad.stateAc }}</td>
+                    <td>{{ actividad.orderJob }}</td>
+                    <td>{{ actividad.input.product_type }}</td>
+                    <td>{{ actividad.amountToUse }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
