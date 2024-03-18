@@ -1,0 +1,52 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Pdf actividades</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />-->
+    
+</head>
+
+<body>
+    <div style="background-color:#46cac8; padding: 5px; text-align: center;">
+        <h1 style="color: white; font-size: 20px;">Lista de Actividades</h1>
+
+    </div>
+
+    <div style="margin: 20px;">
+        <table style="width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr style="background-color: lightgray;">
+                    <th style="padding: 10px;">Fecha Actividad</th>
+                    <th style="padding: 10px;">Tiempo de desarrollo</th>
+                    <th style="padding: 10px;">Descripción Actividad</th>
+                    <th style="padding: 10px;">Novedad Actividad</th>
+                    <th style="padding: 10px;">Estado</th>
+                    <th style="padding: 10px;">OT</th>
+                    <th style="padding: 10px;">Insumo usado</th>
+                    <th style="padding: 10px;">Cantidad de insumo utilizado</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for actividad in actividades %}
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 0px;">{{ actividad.dateAc }}</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">{{ actividad.timeAc }}</td>
+                    <td style="border: 1px solid #ddd; padding: 0px;">{{ actividad.descriptionAc }}</td>
+                    <td style="border: 1px solid #ddd; padding: 0px;">{{ actividad.noveltyAc }}</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">{{ actividad.stateAc }}</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">{{ actividad.orderJob }}</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">{{ actividad.input.product_type }}</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">{{ actividad.amountToUse }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

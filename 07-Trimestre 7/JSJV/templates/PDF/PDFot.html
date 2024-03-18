@@ -1,0 +1,54 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Pdf OT</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />-->
+    
+</head>
+
+<body>
+    <div style="background-color:#46cac8; padding: 5px; text-align: center;">
+        <h1 style="color: white; font-size: 20px;">OT de Lavamatic</h1>
+
+    </div>
+
+    <div style="margin: 20px;">
+        <table style="width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr style="background-color: lightgray;">
+                    <th style="padding: 10px;">Nombre</th>
+                    <th style="padding: 10px;">Correo</th>
+                    <th style="padding: 10px;">N° Celular</th>
+                    <th style="padding: 10px;">Fecha</th>
+                    <th style="padding: 10px;">Servicio</th>
+                    <th style="padding: 10px;">Cantidad Producto</th>
+                    <th style="padding: 10px;">Tipo Producto</th>
+                    <th style="padding: 10px;">Metodo De pago</th>
+                    <th style="padding: 10px;">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ot in ordenesTrabajo %}
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 0px;">{{ ot.nombre_cliente }}</td>
+                    <td style="border: 1px solid #ddd; padding: 0px;">{{ ot.email_cliente }}</td>
+                    <td style="border: 1px solid #ddd; padding: 0px;">{{ ot.numberPhone }}</td>
+                    <td style="border: 1px solid #ddd; padding: 0px;">{{ ot.dateOT }}</td>
+                    <td style="border: 1px solid #ddd; padding: 0px;">{{ ot.typeService }}</td>
+                    <td style="border: 1px solid #ddd; padding: 0px;">{{ ot.productList.amount }}</td>
+                    <td style="border: 1px solid #ddd; padding: 0px;">{{ ot.productList.category }}</td>
+                    <td style="border: 1px solid #ddd; padding: 0px;">{{ ot.paymentMethod }}</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">{{ ot.totalPrice }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
